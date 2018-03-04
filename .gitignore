@@ -10,7 +10,7 @@
 /build
 
 # ide config
-.vscode
+.vscode/
 
 # misc
 .DS_Store
