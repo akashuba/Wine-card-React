@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import reviewsReducers from '../reviews'
+import reviewsReducers from './reviews'
 
 const allReducers = combineReducers({
     reviews: reviewsReducers
