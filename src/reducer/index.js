@@ -1,8 +1,7 @@
 import {combineReducers} from 'redux'
 import reviewsReducers from './reviews'
 
-const allReducers = combineReducers({
+export default  combineReducers({
     reviews: reviewsReducers
 })
 
-export default allReducers
