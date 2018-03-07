@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Review from './Review'
 import './style.css'
+import { connect } from 'react-redux'
 
 
 class ReviewList extends Component {
@@ -24,5 +25,8 @@ class ReviewList extends Component {
 
 }
 
+ function  mapStateToProps (state)  {
+    return  {reviews: state.reviews}
+ }
 
-export default ReviewList
+export default connect(mapStateToProps )(ReviewList)

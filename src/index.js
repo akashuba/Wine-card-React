@@ -2,10 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
 import Clock from './components/Clock'
-import reviews from './reviews'
-
-
-
 
 function tick() {
     ReactDOM.render(<Clock />, document.getElementById('clock'));
@@ -13,8 +9,7 @@ function tick() {
 
 ReactDOM.render(
     <React.Fragment>
-        <App reviews={reviews} />
-
+        <App />
     </React.Fragment>
     , document.getElementById('root'));
 
