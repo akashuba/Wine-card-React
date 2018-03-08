@@ -12,16 +12,15 @@ class App extends Component {
 
     render() {
 
-        const { reviews } = this.props
         return (
             <React.Fragment >
                 <Counter />
                 <Provider store={store} >
-                    <ReviewList reviews={reviews} />
+                    <ReviewList  />
                 </Provider>
             </React.Fragment>
         )
     }
 }
 
-export default App;
+export default App;     

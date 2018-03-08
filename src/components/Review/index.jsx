@@ -13,7 +13,7 @@ class ReviewList extends Component {
     render() {
         const { reviews } = this.props
         const reviewList = reviews.map(review =>
-            <li key={review.name} className="review-item" > <Review review = {review}/> </li>
+            <li key={review.id} className="review-item" > <Review review = {review}/> </li>
         )
  
         return (
@@ -26,7 +26,7 @@ class ReviewList extends Component {
 }
 
  function  mapStateToProps (state)  {
-    return  {reviews: state.reviews}
+    return  {reviews: state.reviews }
  }
 
 export default connect(mapStateToProps )(ReviewList)
