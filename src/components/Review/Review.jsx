@@ -7,7 +7,7 @@ class Review extends Component {
 
 
     render() {
-      
+      console.log(this.props)
         const { review } = this.props
         return (
             <React.Fragment>
@@ -26,8 +26,8 @@ class Review extends Component {
         )
     }
     handleDelete = () => {
-        console.log(this.props.review.id)
-        this.props.deleteReviewDispatch(this.props.review.id)
+        this.props.deleteReview(this.props.review.id)
+    
     }
 
 }
@@ -36,4 +36,4 @@ Review.propTypes = {
     review: PropTypes.object
 }
 
-export default connect(null, {deleteReviewDispatch: deleteReview} )(Review)
+export default connect(null, {deleteReview} )(Review)
