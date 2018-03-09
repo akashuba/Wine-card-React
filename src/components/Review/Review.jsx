@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { deleteReview } from '../../AC'
 
 class Review extends Component {
-    constructor() {
-        super()
-        this.handleDelete.bind(this)
-    }
 
-    handleDelete() {
-        console.log('clicked')
-    }
+
     render() {
-
+      
         const { review } = this.props
         return (
             <React.Fragment>
@@ -29,10 +25,15 @@ class Review extends Component {
             </React.Fragment>
         )
     }
+    handleDelete = () => {
+        console.log(this.props.review.id)
+        this.props.deleteReviewDispatch(this.props.review.id)
+    }
+
 }
 
 Review.propTypes = {
     review: PropTypes.object
 }
 
-export default Review
+export default connect(null, {deleteReviewDispatch: deleteReview} )(Review)
