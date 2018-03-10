@@ -17,7 +17,7 @@ class ReviewList extends Component {
         )
  
         return (
-            <section>
+            <section style={{ width: '60%' }} >
                 {reviewList}
             </section>
         )

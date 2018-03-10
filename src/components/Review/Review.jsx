@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { deleteReview } from '../../AC'
+//import store from '../../store'
 
 class Review extends Component {
 
-
     render() {
-      console.log(this.props)
         const { review } = this.props
         return (
-            <React.Fragment>
+            <React.Fragment >
                 <p className="review-item-title" >
                     <b>
                         {review.name}
@@ -26,9 +25,11 @@ class Review extends Component {
         )
     }
     handleDelete = () => {
-        this.props.deleteReview(this.props.review.id)
-    
-    }
+
+   this.props.deleteReviewDispatch(this.props.review.id)
+/*         const action = deleteReview(this.props.review.id)
+        store.dispatch(action) */
+    } 
 
 }
 
@@ -36,4 +37,7 @@ Review.propTypes = {
     review: PropTypes.object
 }
 
-export default connect(null, {deleteReview} )(Review)
+export default connect(null, {deleteReviewDispatch: deleteReview} )(Review)
+//export default Review
+
+
