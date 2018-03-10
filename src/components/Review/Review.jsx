@@ -6,7 +6,12 @@ import { deleteReview } from '../../AC'
 
 class Review extends Component {
 
+    state = {
+        body: false
+    }
+
     render() {
+        
         const { review } = this.props
         return (
             <React.Fragment >
@@ -14,22 +19,35 @@ class Review extends Component {
                     <b>
                         {review.name}
                     </b>
-                    <button onClick={this.handleDelete} >
-                        delete
-                </button>
                 </p>
+                <button onClick={this.handleDelete} >
+                    delete
+                </button>
+                <button onClick={this.handleToggleBody} >
+                  {this.state.body ? 'close' : 'open' }  
+                </button>
                 <p className="review-item-comment">
-                    {review.comment}
+                    {this.state.body && this.commentBody()}
                 </p>
             </React.Fragment>
         )
     }
-    handleDelete = () => {
 
-   this.props.deleteReviewDispatch(this.props.review.id)
-/*         const action = deleteReview(this.props.review.id)
-        store.dispatch(action) */
-    } 
+    commentBody() {
+        return  this.props.review.comment
+    }
+
+    handleToggleBody = () => {
+        this.setState({
+            body: !this.state.body
+        })
+    }
+
+    handleDelete = () => {
+        this.props.deleteReviewDispatch(this.props.review.id)
+        /*         const action = deleteReview(this.props.review.id)
+                store.dispatch(action) */
+    }
 
 }
 
@@ -37,7 +55,7 @@ Review.propTypes = {
     review: PropTypes.object
 }
 
-export default connect(null, {deleteReviewDispatch: deleteReview} )(Review)
+export default connect(null, { deleteReviewDispatch: deleteReview })(Review)
 //export default Review
 
 
