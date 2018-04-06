@@ -19,10 +19,6 @@ class App extends Component {
   }
 
   render() {
-
-
-
-    
     return (
       <React.Fragment>
         <TitileElem />
