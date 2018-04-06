@@ -7,6 +7,7 @@ function tick() {
     ReactDOM.render(<Clock />, document.getElementById('clock'));
 }
 
+
 ReactDOM.render(
     <React.Fragment>
         <App />

@@ -1,19 +1,11 @@
-import React, { Component } from 'react'
-
+import React, { Component } from "react";
 
 class Counter extends Component {
-    static propTypes = {
+  static propTypes = {};
 
-    }
-
-    render() {
-
-        return (
-            <div>
-
-            </div>
-        )
-    }
+  render() {
+    return <div />;
+  }
 }
 
-export default Counter
+export default Counter;
