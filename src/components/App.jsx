@@ -13,10 +13,6 @@ class App extends Component {
   static propTypes = {
     reviews: PropTypes.array
   };
-  constructor(any) {
-    super(any);
-    this.any = any;
-  }
 
   render() {
     return (
@@ -24,7 +20,7 @@ class App extends Component {
         <TitileElem />
         <Counter />
         <Provider store={store}>
-          <ReviewList any={this.any} />
+          <ReviewList />
         </Provider>
       </React.Fragment>
     );

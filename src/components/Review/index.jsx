@@ -10,7 +10,7 @@ class ReviewList extends Component {
   };
 
   render() {
-    const { reviews, any } = this.props;
+    const { reviews } = this.props;
     const reviewList = reviews.map(review => (
       <li key={review.id} className="review-item">
         {" "}
@@ -21,7 +21,6 @@ class ReviewList extends Component {
     return (
       <React.Fragment>
         <section style={{ width: "60%" }}>{reviewList}</section>
-        <div>{any}</div>
       </React.Fragment>
     );
   }
