@@ -1,1 +1,0 @@
-export const DELETE_REVIEW = "DELETE_REVIEW";

@@ -6,8 +6,9 @@
         true, "single", "avoid-escape"
       ],
       "semicolon": [true, "never"],
-      "object-literal-sort-keys": false,
-      "trailing-comma": [false]
+      "object-literal-sort-keys": [false],
+      "trailing-comma": [false],
+      "ordered-imports": false
     }
 
 }
