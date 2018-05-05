@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 class ReviewList extends Component {
   static propTypes = {
-    reviews: PropTypes.array
+    reviews: PropTypes.array,
   };
 
   render() {

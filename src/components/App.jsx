@@ -11,7 +11,7 @@ function TitileElem() {
 
 class App extends Component {
   static propTypes = {
-    reviews: PropTypes.array
+    reviews: PropTypes.array,
   };
 
   render() {

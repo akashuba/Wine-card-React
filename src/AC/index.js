@@ -1,8 +1,9 @@
-import { DELETE_REVIEW } from '../constants'
+import { DELETE_REVIEW } from "../constants";
 
 export function deleteReview(id) {
     return {
+        payload: { id },
         type: DELETE_REVIEW,
-        payload: { id }
-    }
+    };
+
 }
