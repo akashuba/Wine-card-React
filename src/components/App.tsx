@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReviewList from './Review'
-import Counter from './Counter'
 import { Provider } from 'react-redux'
 import store from '../store'
 
@@ -14,7 +13,6 @@ public  render() {
     return (
       <React.Fragment>
         <TitileElem />
-        <Counter />
         <Provider store={store}>
           <ReviewList />
         </Provider>
