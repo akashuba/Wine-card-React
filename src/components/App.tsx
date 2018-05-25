@@ -7,6 +7,8 @@ function TitileElem() {
     return <h1> Title text </h1>
 }
 
+// https://monsterlessons.com/project/lessons/poluchenie-dannyh-ot-servera-s-pomoshyu-fetch пройти урок
+
 class App extends Component {
     public componentDidMount() {
         const status = (response: any) => {
