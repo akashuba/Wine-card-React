@@ -1,12 +1,17 @@
 import * as React from 'react'
+import { WineCard } from '../WineCard/WineCard'
 
-const Winelist = (reviews: any) => (
-    <div>
-     <h2>
-         Data for new components
-     </h2>
-       {console.log(reviews)}
-    </div>
-)
+const Winelist = (wines: any) => {
 
-export default  Winelist
+    const cardItem = wines.map((card: any) => {
+        return (
+            card
+        )
+    })
+
+    return (
+        <WineCard cardItem={cardItem} />
+    )
+}
+
+export default Winelist

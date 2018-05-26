@@ -1,7 +1,9 @@
 import * as React from 'react'
 
-const WineCard = () => (
-    <div/>
+const WineCard = (cardItem: any) => (
+    <div>
+        {cardItem.name}
+    </div>
 )
 
 export { WineCard }
