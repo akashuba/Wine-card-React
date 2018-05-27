@@ -7,9 +7,9 @@ interface IWinecar {
 const WineCard = ({ cardItem, ...props }: IWinecar): React.ReactElement<IWinecar> => {
     console.log(cardItem)
     return (
-        <div>
+        <React.Fragment>
             {cardItem}
-        </div>
+        </React.Fragment>
     )
 }
 
