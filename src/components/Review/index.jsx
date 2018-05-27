@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Review from "./Review";
 import "./style.css";
 import { connect } from "react-redux";
-import WineList from "../WineList/WineList";
 
 class ReviewList extends Component {
   static propTypes = {
@@ -23,7 +22,6 @@ class ReviewList extends Component {
     return (
       <React.Fragment>
         <section style={{ width: "60%" }}>{reviewList}</section>
-        <WineList reviews = {reviews} />
       </React.Fragment>
     );
   }

@@ -1,16 +1,23 @@
 import * as React from 'react'
 import { WineCard } from '../WineCard/WineCard'
 
-const Winelist = (wines: any) => {
+interface IWineList {
+    wines: any
+}
 
-    const cardItem = wines.map((card: any) => {
+const Winelist = ({ wines, ...props }: IWineList): any => {
+    const CardUnit = wines.map((card: any, i: any) => {
         return (
-            card
+            <div key={i} >
+                {card.name}
+            </div>
         )
     })
 
     return (
-        <WineCard cardItem={cardItem} />
+        <div>
+            <WineCard cardItem={CardUnit} />
+        </div>
     )
 }
 

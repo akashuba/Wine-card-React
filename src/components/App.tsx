@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import ReviewList from './Review'
 import { Provider } from 'react-redux'
 import store from '../store'
-import Wines from '../Wines'
+import WinesBase from '../WinesBase'
+import WineList from './WineList/WineList'
 
 function TitileElem() {
     return <h1> Title text </h1>
@@ -19,7 +20,6 @@ class App extends Component {
                 if (response.status !== 200) {
                     return Promise.reject(new Error(response.statusText))
                 }
-                console.log(response.status)
                 return Promise.resolve(response)
             })
             .then(response => response.json())
@@ -28,7 +28,7 @@ class App extends Component {
     }
 
     public show = (log: any): void => {
-        console.log(log)
+     //   console.log(log)
     }
 
     public render() {
@@ -38,7 +38,8 @@ class App extends Component {
                 <Provider store={store}>
                     <ReviewList />
                 </Provider>
-                {this.show(Wines)}
+                {this.show(WinesBase)}
+                <WineList  wines={WinesBase} />
             </React.Fragment>
         )
     }
