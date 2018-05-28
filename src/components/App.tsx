@@ -5,13 +5,9 @@ import store from '../store'
 import WinesBase from '../WinesBase'
 import WineList from './WineList/WineList'
 
-function TitileElem() {
-    return <h1> Title text </h1>
-}
-
 class App extends Component {
 
-    public componentDidMount() {
+/*     public componentDidMount() {
 
         fetch('http://www.mocky.io/v2/5b07c8b43200008e00700034', {
             method: 'GET',
@@ -25,20 +21,14 @@ class App extends Component {
             .then(response => response.json())
             .then(data => { console.log('fetch', data) })
             .catch(error => { console.warn(error) })
-    }
-
-    public show = (log: any): void => {
-     //   console.log(log)
-    }
+    } */
 
     public render() {
         return (
             <React.Fragment>
-                <TitileElem />
                 <Provider store={store}>
                     <ReviewList />
                 </Provider>
-                {this.show(WinesBase)}
                 <WineList  wines={WinesBase} />
             </React.Fragment>
         )
