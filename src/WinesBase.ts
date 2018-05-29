@@ -62,7 +62,7 @@ export default [
     },
     {
       name: 'Toso',
-      imgUrl: 'img/366toso.jpg',
+      imgUrl: './img/366toso.jpg',
       colorType: 'red',
       sugarContent: 'Сухое',
       rating: '6',

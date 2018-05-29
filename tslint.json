@@ -3,7 +3,7 @@
   "rules": {
       "no-require-imports": false,
       "quotemark": [
-        true, "single", "avoid-escape"
+        true, "single", "jsx-double", "avoid-escape"
       ],
       "semicolon": [true, "never"],
       "object-literal-sort-keys": [false],
