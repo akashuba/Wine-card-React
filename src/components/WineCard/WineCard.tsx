@@ -17,9 +17,10 @@ const WineCard = ({
     noteText,
     imgUrl,
 }: ICard): React.ReactElement<ICard> => {
+    // backgroundImage: `url(${require(`${imgUrl}`)})`
     return (
         <div className="card-item">
-            <div className="card-img" style={{ backgroundImage: `url(${require(`${imgUrl}`)})` }}>
+            <div className="card-img" style={{ backgroundImage: `url()` }}>
                 <div className={`wine-color ${colorType}`} />
                 <div className="wine-raiting">&#9733;{rating}&#9733;</div>
             </div>

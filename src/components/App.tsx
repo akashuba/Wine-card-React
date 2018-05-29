@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import store from '../store'
 import WinesBase from '../WinesBase'
 import WineList from './WineList/WineList'
+import Filter from './Filter/Filter'
 
 class App extends Component {
 
@@ -29,6 +30,7 @@ class App extends Component {
                 <Provider store={store}>
                     <ReviewList />
                 </Provider>
+                <Filter/>
                 <WineList  wines={WinesBase} />
             </React.Fragment>
         )
