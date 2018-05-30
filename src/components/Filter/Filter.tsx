@@ -10,18 +10,23 @@ interface IState {
 }
 
 class Filter extends Component<IProps, IState> {
+    private testInput: React.RefObject<HTMLInputElement>
     constructor(porps: any) {
         super(porps)
         this.state = {
             sparkling: false,
         }
+        this.testInput = React.createRef()
     }
 
     public checkboxHandler = () => {
         this.setState({
             sparkling: !this.state.sparkling,
         })
+    }
 
+    public inputHandler = () => {
+        console.log(this.testInput.current!.value)
     }
 
     public render() {
@@ -73,7 +78,14 @@ class Filter extends Component<IProps, IState> {
                     <label htmlFor="search-string" className="visibility-hidden">
                         Поиск по названию
                     </label>
-                    <input type="text" name="search-string" id="search-string" placeholder="Введите название вина" />
+                    <input
+                        type="text"
+                        name="search-string"
+                        id="search-string"
+                        placeholder="Введите название вина"
+                        ref={this.testInput}
+                        onChange={this.inputHandler}
+                    />
                 </div>
                 <button type="button" className="add-button" aria-label="добавить вино">
                     ДОБАВИТЬ
