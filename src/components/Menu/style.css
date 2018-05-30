@@ -1,0 +1,24 @@
+.menu-route {
+    color: rgb(255, 245, 226);
+    font-size: 20px;
+
+    list-style-type: none;
+}
+
+.menu-route__item {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.menu-route__item-link {
+    color: rgb(255, 245, 226);
+    text-decoration: none;
+    
+}
+
+ .menu-route__item-link:hover {
+    color: rgb(255, 245, 226);
+    border-bottom: 2px solid rgb(255, 245, 226);
+}
+ 

@@ -1,25 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
-// import { Router, Route, hashHistory } from 'react-router'
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import Filter from './components/Filter/Filter'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Menu from './components/Menu/Menu'
+import './components/style.css'
+
+const About = () => (
+    <h1 className="about" >
+        Приложение создается для обмена опытом и по выбору вин разных сортов и категорий.
+         Использованы технологии: React, Redux, Typescript, PHP.
+    </h1>
+)
 
 ReactDOM.render(
     <React.Fragment>
         <Router>
-            <React.Fragment>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                </ul>
+            <div className="page" >
+                <Menu />
                 <Route exact path="/" component={App} />
-                <Route path="/about" component={Filter} />
-            </React.Fragment>
+                <Route path="/about" component={About} />
+            </div>
         </Router>
     </React.Fragment>,
     document.getElementById('root'),

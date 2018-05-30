@@ -557,3 +557,14 @@ body {
   .form-sparkling-input:checked~* .form-checkbox-view::before {
     visibility: visible;
   }
+
+  .about {
+    color: rgb(255, 245, 226);
+    font-family: Helvetica, Arial, sans-serif;
+    text-indent: 1.5em;
+  }
+
+  .page {
+    box-sizing: border-box;
+    padding: 20px;
+  }
