@@ -6,7 +6,27 @@ import WinesBase from '../WinesBase'
 import WineList from './WineList/WineList'
 import Filter from './Filter/Filter'
 
-class App extends Component {
+interface IState {
+    isChecked: boolean
+}
+
+class App extends Component<{}, IState> {
+constructor(props: any) {
+    super(props)
+    this.state = {
+        isChecked: false,
+    }
+}
+
+public setCheck = () => {
+    this.setState({
+        isChecked: !this.state.isChecked
+    })
+}
+
+public componentDidUpdate() {
+    console.log('State isChecked' + this.state.isChecked )
+}
 
 /*     public componentDidMount() {
 
@@ -30,7 +50,7 @@ class App extends Component {
                 <Provider store={store}>
                     <ReviewList />
                 </Provider>
-                <Filter/>
+                <Filter isChecked={this.state.isChecked} setCheck={this.setCheck} />
                 <WineList  wines={WinesBase} />
             </React.Fragment>
         )

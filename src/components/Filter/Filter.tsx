@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import '../style.css'
 
 interface IProps {
-    some?: string
+    isChecked: boolean,
+    setCheck: () => void
 }
 
 interface IState {
@@ -29,7 +30,12 @@ class Filter extends Component<IProps, IState> {
         console.log(this.testInput.current!.value)
     }
 
+    public componentDidUpdate() {
+        console.log( 'isChecked is' + this.props.isChecked)
+    }
+
     public render() {
+        const {setCheck, isChecked} = this.props
         return (
             <section className="selectors">
                 <div className="winesColor">
@@ -66,8 +72,8 @@ class Filter extends Component<IProps, IState> {
                         id="sparkling-selector"
                         value="Игристое"
                         className="visibility-hidden"
-                        checked={this.state.sparkling}
-                        onChange={this.checkboxHandler}
+                        checked={isChecked}
+                        onChange={setCheck}
                     />
                     <label htmlFor="sparkling-selector">
                         игристое
