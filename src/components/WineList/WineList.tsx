@@ -3,7 +3,7 @@ import { WineCard } from '../WineCard/WineCard'
 import { ICard } from '../../types'
 import '../style.css'
 
-const Winelist = ({ wines }: any): React.ReactElement<ICard> => {
+const Winelist = ({ wines, isSparkling }: any): React.ReactElement<ICard> => {
     const CardUnit = () =>
         wines.map((card: ICard, i: number) => {
             return (

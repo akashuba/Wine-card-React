@@ -50,7 +50,7 @@ class App extends Component<{}, IState> {
                     <ReviewList />
                 </Provider>
                 <Filter isChecked={this.state.isChecked} setCheck={this.setCheck} />
-                <WineList wines={WinesBase} />
+                <WineList wines={WinesBase} isSparkling={this.state.isChecked} />
             </React.Fragment>
         )
     }
