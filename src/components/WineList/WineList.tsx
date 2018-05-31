@@ -4,6 +4,12 @@ import { ICard } from '../../types'
 import '../style.css'
 
 const Winelist = ({ wines, isSparkling }: any): React.ReactElement<ICard> => {
+    if (isSparkling === true) {
+        wines = wines.filter((card: ICard) => {
+            return card.sparkling === 'Игристое'
+        })
+        console.log(isSparkling, wines)
+    }
     const CardUnit = () =>
         wines.map((card: ICard, i: number) => {
             return (
