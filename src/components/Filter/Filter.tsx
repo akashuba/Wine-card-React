@@ -12,7 +12,7 @@ interface IState {
 
 class Filter extends Component<IProps, IState> {
     private testInput: React.RefObject<HTMLInputElement>
-    constructor(porps: any) {
+    constructor(porps: IProps) {
         super(porps)
         this.state = {
             sparkling: false,
@@ -28,10 +28,6 @@ class Filter extends Component<IProps, IState> {
 
     public inputHandler = () => {
         console.log(this.testInput.current!.value)
-    }
-
-    public componentDidUpdate() {
-        console.log( 'isChecked is' + this.props.isChecked)
     }
 
     public render() {

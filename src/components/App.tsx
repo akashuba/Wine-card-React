@@ -11,38 +11,37 @@ interface IState {
 }
 
 class App extends Component<{}, IState> {
-constructor(props: any) {
-    super(props)
-    this.state = {
-        isChecked: false,
+    constructor(props: {}) {
+        super(props)
+        this.state = {
+            isChecked: false,
+        }
     }
-}
 
-public setCheck = () => {
-    this.setState({
-        isChecked: !this.state.isChecked
-    })
-}
-
-public componentDidUpdate() {
-    console.log('State isChecked' + this.state.isChecked )
-}
-
-/*     public componentDidMount() {
-
-        fetch('http://www.mocky.io/v2/5b07c8b43200008e00700034', {
-            method: 'GET',
+    public setCheck = () => {
+        this.setState({
+            isChecked: !this.state.isChecked,
         })
-            .then(response => {
-                if (response.status !== 200) {
-                    return Promise.reject(new Error(response.statusText))
-                }
-                return Promise.resolve(response)
-            })
-            .then(response => response.json())
-            .then(data => { console.log('fetch', data) })
-            .catch(error => { console.warn(error) })
-    } */
+    }
+
+    // public componentDidMount() {
+    //     fetch('http://www.mocky.io/v2/5b07c8b43200008e00700034', {
+    //         method: 'GET',
+    //     })
+    //         .then(response => {
+    //             if (response.status !== 200) {
+    //                 return Promise.reject(new Error(response.statusText))
+    //             }
+    //             return Promise.resolve(response)
+    //         })
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log('fetch', data)
+    //         })
+    //         .catch(error => {
+    //             console.warn(error)
+    //         })
+    // }
 
     public render() {
         return (
@@ -51,7 +50,7 @@ public componentDidUpdate() {
                     <ReviewList />
                 </Provider>
                 <Filter isChecked={this.state.isChecked} setCheck={this.setCheck} />
-                <WineList  wines={WinesBase} />
+                <WineList wines={WinesBase} />
             </React.Fragment>
         )
     }
