@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
-import ReviewList from './Review'
 import WineList from './WineList/WineList'
 import Filter from './Filter/Filter'
 import { connect } from 'react-redux'
+import { ICard } from '../types'
 
 interface IState {
     isChecked: boolean
 }
 
-class App extends Component<any, IState> {
-    constructor(cards: any) {
-        super(cards)
+interface IProps {
+    cards: ICard[]
+}
+
+class App extends Component<IProps, IState> {
+    constructor(props: IProps) {
+        super(props)
         this.state = {
             isChecked: false,
         }
@@ -45,7 +49,6 @@ class App extends Component<any, IState> {
         const {cards} = this.props
         return (
             <React.Fragment>
-                <ReviewList />
                 <Filter isChecked={this.state.isChecked} setCheck={this.setCheck} />
                 <WineList wines={cards} isSparkling={this.state.isChecked} />
             </React.Fragment>
