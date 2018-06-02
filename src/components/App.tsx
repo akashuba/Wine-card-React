@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
 import ReviewList from './Review'
-import { Provider } from 'react-redux'
-import store from '../store'
-import WinesBase from '../WinesBase'
 import WineList from './WineList/WineList'
 import Filter from './Filter/Filter'
+import { connect } from 'react-redux'
 
 interface IState {
     isChecked: boolean
 }
 
-class App extends Component<{}, IState> {
-    constructor(props: {}) {
-        super(props)
+class App extends Component<any, IState> {
+    constructor(cards: any) {
+        super(cards)
         this.state = {
             isChecked: false,
         }
@@ -44,16 +42,19 @@ class App extends Component<{}, IState> {
     // }
 
     public render() {
+        const {cards} = this.props
         return (
             <React.Fragment>
-                <Provider store={store}>
-                    <ReviewList />
-                </Provider>
+                <ReviewList />
                 <Filter isChecked={this.state.isChecked} setCheck={this.setCheck} />
-                <WineList wines={WinesBase} isSparkling={this.state.isChecked} />
+                <WineList wines={cards} isSparkling={this.state.isChecked} />
             </React.Fragment>
         )
     }
 }
 
-export default App
+function mapStateToProps(state: any) {
+    return { cards: state.cards }
+}
+
+export default connect(mapStateToProps)(App)
