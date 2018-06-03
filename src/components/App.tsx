@@ -9,7 +9,8 @@ interface IState {
 }
 
 interface IProps {
-    cards: ICard[]
+    cards: ICard[],
+    isSparkling: boolean
 }
 
 class App extends Component<IProps, IState> {
@@ -46,18 +47,22 @@ class App extends Component<IProps, IState> {
     // }
 
     public render() {
-        const {cards} = this.props
+        const {cards, isSparkling} = this.props
+        console.log(isSparkling)
         return (
             <React.Fragment>
                 <Filter isChecked={this.state.isChecked} setCheck={this.setCheck} />
-                <WineList wines={cards} isSparkling={this.state.isChecked} />
+                <WineList wines={cards} isSparkling={isSparkling} />
             </React.Fragment>
         )
     }
 }
 
 function mapStateToProps(state: any) {
-    return { cards: state.cards }
+    return {
+        cards: state.cards,
+        isSparkling: state.isSparkling
+    }
 }
 
 export default connect(mapStateToProps)(App)

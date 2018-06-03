@@ -6,5 +6,8 @@ interface IAction {
 }
 
 export default (cardsState = defaultCards, action: IAction) => {
-    return cardsState
-}
+// const { type, payload } = action;
+
+//     return reviewsState.filter(review => review.id !== payload.id );
+            return cardsState
+    }

@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import '../style.css'
+import { connect } from 'react-redux'
+import { filterSparkling } from '../../AC'
+// import cards from '../../reducer/cards'
 
 interface IProps {
     isChecked: boolean,
-    setCheck: () => void
+    setCheck: () => void,
+    filterSparklingWines: () => any
 }
 
 interface IState {
@@ -31,7 +35,7 @@ class Filter extends Component<IProps, IState> {
     }
 
     public render() {
-        const {setCheck, isChecked} = this.props
+        const { filterSparklingWines } = this.props
         return (
             <section className="selectors">
                 <div className="winesColor">
@@ -68,8 +72,7 @@ class Filter extends Component<IProps, IState> {
                         id="sparkling-selector"
                         value="Игристое"
                         className="visibility-hidden"
-                        checked={isChecked}
-                        onChange={setCheck}
+                        onChange={filterSparklingWines}
                     />
                     <label htmlFor="sparkling-selector">
                         игристое
@@ -96,5 +99,12 @@ class Filter extends Component<IProps, IState> {
         )
     }
 }
+const mapDispatchToProps = (dispatch: any) => ({
+    filterSparklingWines: () => dispatch(filterSparkling())
+  })
 
-export default Filter
+/* const mapStateToProps = (state: any) => {
+    return {isSparkling: state.isSparkling}
+} */
+
+export default  connect(null, mapDispatchToProps)(Filter)

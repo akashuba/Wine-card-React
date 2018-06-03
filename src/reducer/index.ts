@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
-import reviewsReducers from './reviews'
 import cardReducers from './cards'
+import sparklingFilter from './sparklingFilter'
 
 export default  combineReducers({
-    reviews: reviewsReducers,
-    cards: cardReducers
+    cards: cardReducers,
+    isSparkling: sparklingFilter
 })

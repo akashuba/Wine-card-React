@@ -1,9 +1,8 @@
-import { DELETE_REVIEW } from '../constants'
+import { SPARKLING_FILTER } from '../constants'
 
-export function deleteReview(id: number) {
+export function filterSparkling() {
     return {
-        type: DELETE_REVIEW,
-        payload: { id },
+        type: SPARKLING_FILTER,
     }
 
 }
