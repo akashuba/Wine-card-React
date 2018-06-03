@@ -1,8 +1,8 @@
-import { SPARKLING_FILTER } from '../constants'
+import { FILTER } from '../constants'
 
 export function filterSparkling() {
     return {
-        type: SPARKLING_FILTER,
+        type: FILTER.SPARKLING,
     }
 
 }

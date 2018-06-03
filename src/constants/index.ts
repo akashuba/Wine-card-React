@@ -1,1 +1,3 @@
-export const SPARKLING_FILTER = 'SARKLING_FILTER'
+export enum FILTER {
+    SPARKLING = 'SARKLING_FILTER',
+}

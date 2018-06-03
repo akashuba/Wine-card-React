@@ -1,4 +1,4 @@
-import { SPARKLING_FILTER } from '../constants'
+import { FILTER } from '../constants'
 
 interface IAction {
     type: string,
@@ -7,7 +7,7 @@ interface IAction {
 
 export default (checkbox = false, action: IAction) => {
     const { type } = action
-    if (type === SPARKLING_FILTER) {
+    if (type === FILTER.SPARKLING) {
         return !checkbox
     }
     return checkbox
