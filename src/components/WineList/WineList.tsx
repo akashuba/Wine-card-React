@@ -5,15 +5,9 @@ import '../style.css'
 
 interface IProps {
     wines: ICard[],
-    isSparkling?: boolean
 }
 
-const Winelist = ({ wines, isSparkling }: IProps): React.ReactElement<IProps>  => {
-    if (isSparkling === true) {
-        wines = wines.filter((card: ICard) => {
-            return card.sparkling !== null
-        })
-    }
+const Winelist = ({ wines }: IProps): React.ReactElement<IProps>  => {
     const CardUnit = (): any =>
         wines.map((card: ICard, i: number) => {
             return (

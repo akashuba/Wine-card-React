@@ -48,11 +48,11 @@ class App extends Component<IProps, IState> {
 
     public render() {
         const {cards, isSparkling} = this.props
-        console.log(isSparkling)
+        const cardsResult = isSparkling ? cards.filter((card: ICard) => card.sparkling !== null) : cards
         return (
             <React.Fragment>
                 <Filter isChecked={this.state.isChecked} setCheck={this.setCheck} />
-                <WineList wines={cards} isSparkling={isSparkling} />
+                <WineList wines={cardsResult} />
             </React.Fragment>
         )
     }
