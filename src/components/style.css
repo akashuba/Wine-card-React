@@ -560,7 +560,8 @@ body {
 
   .about {
     color: rgb(255, 245, 226);
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Marck Script', cursive, Arial, Helvetica, sans-serif;
+    font-weight: 300;
     text-indent: 1.5em;
   }
 
