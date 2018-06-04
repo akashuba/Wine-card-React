@@ -3,14 +3,18 @@ import { WineCard } from '../WineCard/WineCard'
 import { ICard } from '../../types'
 import '../style.css'
 
-const Winelist = ({ wines, isSparkling }: any): React.ReactElement<ICard> => {
+interface IProps {
+    wines: ICard[],
+    isSparkling?: boolean
+}
+
+const Winelist = ({ wines, isSparkling }: IProps): React.ReactElement<IProps>  => {
     if (isSparkling === true) {
         wines = wines.filter((card: ICard) => {
-            return card.sparkling === 'Игристое'
+            return card.sparkling !== null
         })
-        console.log(isSparkling, wines)
     }
-    const CardUnit = () =>
+    const CardUnit = (): any =>
         wines.map((card: ICard, i: number) => {
             return (
                 <WineCard
