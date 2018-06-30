@@ -7,7 +7,7 @@ interface IAction {
 
 export default (checkbox = false, action: IAction) => {
     const { type } = action
-    if (type === FILTER.SPARKLING) {
+    if (type === FILTER.FILTER_BY_SPARKLING) {
         return !checkbox
     }
     return checkbox

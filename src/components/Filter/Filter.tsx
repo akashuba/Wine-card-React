@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import '../style.css'
 import { connect } from 'react-redux'
-import { filterSparkling } from '../../AC'
-// import cards from '../../reducer/cards'
+import { filterBySparkling } from '../../AC'
+// import cards from '../../reduce
 
 interface IProps {
     isChecked: boolean,
     setCheck: () => void,
-    filterSparklingWines: () => any
+    filterBySparklingWines: () => any
 }
 
 interface IState {
@@ -35,14 +35,15 @@ class Filter extends Component<IProps, IState> {
     }
 
     public render() {
-        const { filterSparklingWines } = this.props
+        const { filterBySparklingWines } = this.props
         return (
             <section className="selectors">
                 <div className="winesColor">
                     <label htmlFor="color-selector" className="visibility-hidden">
                         Содержание сахара
                     </label>
-                    <select name="color-selector" id="color-selector" className="selectors-arrow">
+                    <select name="color-selector" id="color-selector" className="selectors-arrow"
+                    style={{ backgroundImage: `url(${require('../../img/icon-down-dir.svg')})` }} >
                         <option value="любое">цвет</option>
                         <option value="red">красное</option>
                         <option value="white">белое</option>
@@ -53,7 +54,8 @@ class Filter extends Component<IProps, IState> {
                     <label htmlFor="taste-selector" className="visibility-hidden">
                         Содержание сахара
                     </label>
-                    <select name="taste-selector" id="taste-selector" className="selectors-arrow">
+                    <select name="taste-selector" id="taste-selector" className="selectors-arrow"
+                     style={{ backgroundImage: `url(${require('../../img/icon-down-dir.svg')})` }} >
                         <option value="любое">сладость / крепость</option>
                         <option value="Сухое">сухое</option>
                         <option value="Полусухое">полусухое</option>
@@ -72,7 +74,7 @@ class Filter extends Component<IProps, IState> {
                         id="sparkling-selector"
                         value="Игристое"
                         className="visibility-hidden"
-                        onChange={filterSparklingWines}
+                        onChange={filterBySparklingWines}
                     />
                     <label htmlFor="sparkling-selector">
                         игристое
@@ -100,11 +102,11 @@ class Filter extends Component<IProps, IState> {
     }
 }
 const mapDispatchToProps = (dispatch: any) => ({
-    filterSparklingWines: () => dispatch(filterSparkling())
-  })
+    filterBySparklingWines: () => dispatch(filterBySparkling())
+})
 
 /* const mapStateToProps = (state: any) => {
     return {isSparkling: state.isSparkling}
 } */
 
-export default  connect(null, mapDispatchToProps)(Filter)
+export default connect(null, mapDispatchToProps)(Filter)

@@ -23,7 +23,6 @@ body {
   .wine-cards {
     width: 1150px;
     margin: 0 auto;
-    padding: 0;
     box-sizing: border-box;
     padding: 20px;
     display: flex;
@@ -211,7 +210,6 @@ body {
   }
   
   .selectors-arrow {
-    background-image: url('/img/icon-down-dir.svg');
     background-position: 95% 50%;
     background-repeat: no-repeat;
     -webkit-appearance: none;
