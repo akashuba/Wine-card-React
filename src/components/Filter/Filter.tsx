@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import '../style.css'
 import { connect } from 'react-redux'
-import { filterBySparkling } from '../../AC'
+import { filterBySparkling, filterByName } from '../../AC'
 // import cards from '../../reduce
 
 interface IProps {
     isChecked: boolean,
     setCheck: () => void,
-    filterBySparklingWines: () => any
+    filterBySparklingWines: () => void,
+    filterByNameProps: (nameLetter: string) => void
 }
 
 interface IState {
@@ -35,7 +36,7 @@ class Filter extends Component<IProps, IState> {
     }
 
     public render() {
-        const { filterBySparklingWines } = this.props
+        const { filterBySparklingWines, filterByNameProps } = this.props
         return (
             <section className="selectors">
                 <div className="winesColor">
@@ -91,7 +92,7 @@ class Filter extends Component<IProps, IState> {
                         id="search-string"
                         placeholder="Введите название вина"
                         ref={this.testInput}
-                        onChange={this.inputHandler}
+                        onChange={(e) => filterByNameProps(e.target.value)}
                     />
                 </div>
                 <button type="button" className="add-button" aria-label="добавить вино">
@@ -102,7 +103,8 @@ class Filter extends Component<IProps, IState> {
     }
 }
 const mapDispatchToProps = (dispatch: any) => ({
-    filterBySparklingWines: () => dispatch(filterBySparkling())
+    filterBySparklingWines: () => dispatch(filterBySparkling()),
+    filterByNameProps: (nameLetter: string) => dispatch(filterByName(nameLetter))
 })
 
 /* const mapStateToProps = (state: any) => {
