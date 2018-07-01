@@ -5,6 +5,10 @@ body {
     font-size: 14px;
     background-color: rgb(59, 8, 29);
   }
+
+  a {
+    text-decoration: none;
+  }
   
   .wine-card-logo {
     width: 500px;

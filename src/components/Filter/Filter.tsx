@@ -5,36 +5,18 @@ import { filterBySparkling, filterByName, filterByColor, filterByTaste } from '.
 // import cards from '../../reduce
 
 interface IProps {
-  isChecked: boolean,
-  setCheck: () => void,
   filterBySparklingWines: (isChecked: boolean) => void,
   filterByNameProps: (nameLetter: string) => void,
   filterByColorProps: (color: string) => void,
   filterByTasteProps: (taste: string) => void,
 }
 
-interface IState {
-  sparkling: boolean
-}
-
-class Filter extends Component<IProps, IState> {
+class Filter extends Component<IProps> {
   private testInput: React.RefObject<HTMLInputElement>
   constructor(porps: IProps) {
     super(porps)
-    this.state = {
-      sparkling: false,
-    }
+
     this.testInput = React.createRef()
-  }
-
-  public checkboxHandler = () => {
-    this.setState({
-      sparkling: !this.state.sparkling,
-    })
-  }
-
-  public inputHandler = () => {
-    console.log(this.testInput.current!.value)
   }
 
   public render() {
@@ -48,7 +30,7 @@ class Filter extends Component<IProps, IState> {
           <select name="color-selector" id="color-selector" className="selectors-arrow"
             style={{ backgroundImage: `url(${require('../../img/icon-down-dir.svg')})` }}
             onChange={(e) => filterByColorProps(e.target.value)}
-            >
+          >
             <option value="">цвет</option>
             <option value="red">красное</option>
             <option value="white">белое</option>
@@ -101,9 +83,9 @@ class Filter extends Component<IProps, IState> {
             onChange={(e) => filterByNameProps(e.target.value)}
           />
         </div>
-        <button type="button" className="add-button" aria-label="добавить вино">
+        {/* <button type="button" className="add-button" aria-label="добавить вино">
           ДОБАВИТЬ
-                </button>
+        </button> */}
       </section>
     )
   }

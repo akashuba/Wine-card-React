@@ -6,6 +6,7 @@ import Menu from './components/Menu/Menu'
 import './components/style.css'
 import { Provider } from 'react-redux'
 import store from './store'
+import { WineCard } from './components/WineCard/WineCard'
 
 const About = () => (
     <h1 className="about" >
@@ -23,6 +24,8 @@ ReactDOM.render(
                     <Menu />
                     <Route exact path="/" component={App} />
                     <Route path="/about" component={About} />
+                    <Route path="/card-item/:name" render={
+                      ({location}) =>  <WineCard {...location.state} /> } />
                 </div>
                 </Provider>
             </div>

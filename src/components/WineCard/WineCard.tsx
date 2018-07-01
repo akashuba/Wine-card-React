@@ -57,9 +57,9 @@ const WineCard = ({
                     {noteText}
                 </p>
             </div>
-            {/*             <p className='more-info' data-parent={name}>
+            <p className="more-info" data-parent={name}>
                 Подробнее...
-            </p> */}
+            </p>
         </div>
     )
 }

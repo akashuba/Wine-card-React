@@ -4,10 +4,6 @@ import Filter from './Filter/Filter'
 import { connect } from 'react-redux'
 import { ICard } from '../types'
 
-interface IState {
-    isChecked: boolean
-}
-
 interface IProps {
     cards: ICard[],
     isSparkling: boolean,
@@ -15,20 +11,10 @@ interface IProps {
     allFilters: any
 }
 
-class App extends Component<IProps, IState> {
+class App extends Component<IProps> {
     constructor(props: IProps) {
         super(props)
-        this.state = {
-            isChecked: false,
-        }
     }
-
-    public setCheck = () => {
-        this.setState({
-            isChecked: !this.state.isChecked,
-        })
-    }
-
     // public componentDidMount() {
     //     fetch('http://www.mocky.io/v2/5b07c8b43200008e00700034', {
     //         method: 'GET',
@@ -47,15 +33,13 @@ class App extends Component<IProps, IState> {
     //             console.warn(error)
     //         })
     // }
-
     public render() {
         const { cards, allFilters } = this.props
         const cardResult = filterByInput(cards, allFilters)
         return (
             <React.Fragment>
-                <Filter isChecked={this.state.isChecked} setCheck={this.setCheck} />
+                <Filter  />
                 <WineList wines={cardResult} />
-                {console.log(allFilters)}
             </React.Fragment>
         )
     }
