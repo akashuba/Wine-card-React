@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import '../style.css'
 import { connect } from 'react-redux'
-import { filterBySparkling, filterByName } from '../../AC'
+import { filterBySparkling, filterByName, filterByColor, filterByTaste } from '../../AC'
 // import cards from '../../reduce
 
 interface IProps {
   isChecked: boolean,
   setCheck: () => void,
   filterBySparklingWines: (isChecked: boolean) => void,
-  filterByNameProps: (nameLetter: string) => void
+  filterByNameProps: (nameLetter: string) => void,
+  filterByColorProps: (color: string) => void,
+  filterByTasteProps: (taste: string) => void,
 }
 
 interface IState {
@@ -36,7 +38,7 @@ class Filter extends Component<IProps, IState> {
   }
 
   public render() {
-    const { filterBySparklingWines, filterByNameProps } = this.props
+    const { filterBySparklingWines, filterByNameProps, filterByColorProps, filterByTasteProps } = this.props
     return (
       <section className="selectors">
         <div className="winesColor">
@@ -44,8 +46,10 @@ class Filter extends Component<IProps, IState> {
             Содержание сахара
                     </label>
           <select name="color-selector" id="color-selector" className="selectors-arrow"
-            style={{ backgroundImage: `url(${require('../../img/icon-down-dir.svg')})` }} >
-            <option value="любое">цвет</option>
+            style={{ backgroundImage: `url(${require('../../img/icon-down-dir.svg')})` }}
+            onChange={(e) => filterByColorProps(e.target.value)}
+            >
+            <option value="">цвет</option>
             <option value="red">красное</option>
             <option value="white">белое</option>
             <option value="rose">розовое</option>
@@ -56,8 +60,10 @@ class Filter extends Component<IProps, IState> {
             Содержание сахара
                     </label>
           <select name="taste-selector" id="taste-selector" className="selectors-arrow"
-            style={{ backgroundImage: `url(${require('../../img/icon-down-dir.svg')})` }} >
-            <option value="любое">сладость / крепость</option>
+            style={{ backgroundImage: `url(${require('../../img/icon-down-dir.svg')})` }}
+            onChange={(e) => filterByTasteProps(e.target.value)}
+          >
+            <option value="">сладость / крепость</option>
             <option value="Сухое">сухое</option>
             <option value="Полусухое">полусухое</option>
             <option value="Полусладкое">полусладкое</option>
@@ -104,7 +110,9 @@ class Filter extends Component<IProps, IState> {
 }
 const mapDispatchToProps = (dispatch: any) => ({
   filterBySparklingWines: (isChecked: boolean) => dispatch(filterBySparkling(isChecked)),
-  filterByNameProps: (nameLetter: string) => dispatch(filterByName(nameLetter))
+  filterByNameProps: (nameLetter: string) => dispatch(filterByName(nameLetter)),
+  filterByColorProps: (color: string) => dispatch(filterByColor(color)),
+  filterByTasteProps: (taste: string) => dispatch(filterByTaste(taste)),
 })
 
 /* const mapStateToProps = (state: any) => {

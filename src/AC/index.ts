@@ -13,3 +13,17 @@ export function filterByName(nameLatter: string) {
         payload: nameLatter
     }
 }
+
+export function filterByColor(color: string) {
+    return {
+        type: FILTER.FILTER_BY_COLOR,
+        payload: color
+    }
+}
+
+export function filterByTaste(taste: string) {
+    return {
+        type: FILTER.FILTER_BY_TASTE,
+        payload: taste
+    }
+}

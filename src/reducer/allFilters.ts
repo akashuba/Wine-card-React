@@ -11,6 +11,12 @@ const filtersDefault = {
     },
     name: {
         nameLetter: ''
+    },
+    color: {
+        colorType: ''
+    },
+    taste: {
+        tasteType: ''
     }
 }
 
@@ -32,6 +38,21 @@ export default (allFilters = filtersDefault, action: IAction) => {
             }
         }
     }
-
+    if (type === FILTER.FILTER_BY_COLOR) {
+        return {
+            ...allFilters,
+            color: {
+                colorType: payload
+            }
+        }
+    }
+    if (type === FILTER.FILTER_BY_TASTE) {
+        return {
+            ...allFilters,
+            taste: {
+                tasteType: payload
+            }
+        }
+    }
     return allFilters
 }

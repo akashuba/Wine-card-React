@@ -71,6 +71,8 @@ function mapStateToProps(state: IProps) {
 function filterByInput(cards: ICard[], filterOption: any) {
     return (cards.filter(card => card.sparkling !== filterOption.sparkling.isSparkling)
                  .filter(card => isMatching(card.name, filterOption.name.nameLetter))
+                 .filter(card => isMatching(card.colorType, filterOption.color.colorType))
+                 .filter(card => isMatching(card.sugarContent, filterOption.taste.tasteType))
     )
 }
 
