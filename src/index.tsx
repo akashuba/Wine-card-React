@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Menu from './components/Menu/Menu'
 import './components/style.css'
 import { Provider } from 'react-redux'
 import store from './store'
@@ -21,7 +20,6 @@ ReactDOM.render(
             <div className="page" >
                 <Provider store={store} >
                 <div>
-                    <Menu />
                     <Route exact path="/" component={App} />
                     <Route path="/about" component={About} />
                     <Route path="/card-item/:name" render={

@@ -25,7 +25,7 @@ body {
   }
   
   .wine-cards {
-    width: 1150px;
+    min-width: 385px;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 20px;
@@ -201,7 +201,6 @@ body {
   /* Блок с фильтрами */
   
   .selectors {
-    width: 1150px;
     box-sizing: border-box;
     padding: 5px 20px 0 20px;
     display: flex;
