@@ -7,7 +7,7 @@ import { filterBySparkling, filterByName } from '../../AC'
 interface IProps {
     isChecked: boolean,
     setCheck: () => void,
-    filterBySparklingWines: () => void,
+    filterBySparklingWines: (isChecked: boolean) => void,
     filterByNameProps: (nameLetter: string) => void
 }
 
@@ -75,7 +75,7 @@ class Filter extends Component<IProps, IState> {
                         id="sparkling-selector"
                         value="Игристое"
                         className="visibility-hidden"
-                        onChange={filterBySparklingWines}
+                        onChange={(e) => filterBySparklingWines(e.target.checked)}
                     />
                     <label htmlFor="sparkling-selector">
                         игристое
@@ -103,7 +103,7 @@ class Filter extends Component<IProps, IState> {
     }
 }
 const mapDispatchToProps = (dispatch: any) => ({
-    filterBySparklingWines: () => dispatch(filterBySparkling()),
+    filterBySparklingWines: (isChecked: boolean) => dispatch(filterBySparkling(isChecked)),
     filterByNameProps: (nameLetter: string) => dispatch(filterByName(nameLetter))
 })
 

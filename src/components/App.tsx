@@ -10,7 +10,9 @@ interface IState {
 
 interface IProps {
     cards: ICard[],
-    isSparkling: boolean
+    isSparkling: boolean,
+    nameLetter: string,
+    allFilters: any
 }
 
 class App extends Component<IProps, IState> {
@@ -47,12 +49,13 @@ class App extends Component<IProps, IState> {
     // }
 
     public render() {
-        const {cards, isSparkling} = this.props
-        const cardsResult = isSparkling ? cards.filter((card: ICard) => card.sparkling !== null) : cards
+        const { cards, allFilters } = this.props
+        const cardResult = filterByInput(cards, allFilters)
         return (
             <React.Fragment>
                 <Filter isChecked={this.state.isChecked} setCheck={this.setCheck} />
-                <WineList wines={cardsResult} />
+                <WineList wines={cardResult} />
+                {console.log(allFilters)}
             </React.Fragment>
         )
     }
@@ -61,8 +64,14 @@ class App extends Component<IProps, IState> {
 function mapStateToProps(state: any) {
     return {
         cards: state.cards,
-        isSparkling: state.isSparkling
+        isSparkling: state.isSparkling,
+        nameLetter: state.name,
+        allFilters: state.allFilters
     }
+}
+
+function filterByInput(cards: ICard[], filterOption: any) {
+    return cards.filter(card => card.sparkling  === filterOption.sparkling.isSparkling )
 }
 
 export default connect(mapStateToProps)(App)
