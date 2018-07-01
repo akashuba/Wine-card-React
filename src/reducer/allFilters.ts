@@ -7,7 +7,7 @@ interface IAction {
 
 const filtersDefault = {
     sparkling: {
-        isSparkling: false
+        isSparkling: ''
     },
     name: {
         nameLetter: ''
@@ -20,7 +20,7 @@ export default (allFilters = filtersDefault, action: IAction) => {
         return {
             ...allFilters,
             sparkling: {
-                isSparkling: payload
+                isSparkling: payload ? 'none' : ''
             }
         }
     }

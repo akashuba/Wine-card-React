@@ -61,17 +61,23 @@ class App extends Component<IProps, IState> {
     }
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: IProps) {
     return {
         cards: state.cards,
-        isSparkling: state.isSparkling,
-        nameLetter: state.name,
         allFilters: state.allFilters
     }
 }
 
 function filterByInput(cards: ICard[], filterOption: any) {
-    return cards.filter(card => card.sparkling  === filterOption.sparkling.isSparkling )
+    return (cards.filter(card => card.sparkling !== filterOption.sparkling.isSparkling)
+                 .filter(card => isMatching(card.name, filterOption.name.nameLetter))
+    )
+}
+
+function isMatching(full: string, chunk: string) {
+    full = full.toLowerCase()
+    chunk = chunk.toLowerCase()
+    return (full.indexOf(chunk) >= 0)
 }
 
 export default connect(mapStateToProps)(App)
