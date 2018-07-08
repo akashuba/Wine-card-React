@@ -19,12 +19,15 @@ ReactDOM.render(
         <Router>
             <div className="page" >
                 <Provider store={store} >
-                <div>
-                    <Route exact path="/" component={App} />
-                    <Route path="/about" component={About} />
-                    <Route path="/card-item/:name" render={
-                      ({location}) =>  <WineCard {...location.state} /> } />
-                </div>
+                    <div>
+                        <Route exact path="/" component={App} />
+                        <Route path="/about" component={About} />
+                        <Route path="/card-item/:name" render={
+                            ({ location }) => {
+                                console.log(location)
+                                return <WineCard {...location.state} currentLocation={location.search} />
+                            }} />
+                    </div>
                 </Provider>
             </div>
         </Router>

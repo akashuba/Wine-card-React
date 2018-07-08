@@ -14,7 +14,8 @@ const Winelist = ({ wines }: IProps): React.ReactElement<IProps>  => {
             return (
                 <Link key={card.name}  to={{
                     pathname: `/card-item/${card.name}`,
-                    state: card
+                    state: card,
+                    search: `?${card.name}`
                   }} >
                 <WineCard
                     name={card.name}
