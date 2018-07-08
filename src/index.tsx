@@ -24,7 +24,6 @@ ReactDOM.render(
                         <Route path="/about" component={About} />
                         <Route path="/card-item/:name" render={
                             ({ location }) => {
-                                console.log(location)
                                 return <WineCard {...location.state} currentLocation={location.search} />
                             }} />
                     </div>

@@ -29,7 +29,7 @@ const Winelist = ({ wines }: IProps): React.ReactElement<IProps>  => {
                     tasteText={card.tasteText}
                     originText={card.originText}
                     priceText={card.priceText}
-                    noteText={card.tasteText}
+                    noteText={card.noteText}
                     contributor={card.tasteText}
                 />
                 </Link>

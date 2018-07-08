@@ -1,3 +1,4 @@
+
 body {
     padding: 0;
     margin: 0;
@@ -10,6 +11,11 @@ body {
     text-decoration: none;
   }
   
+  .card-container {
+    padding-top: 35px;
+    position: relative;
+  }
+
   .wine-card-logo {
     width: 500px;
     margin: 20px auto;
@@ -32,7 +38,6 @@ body {
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
-    /*  background-color: rgb(154, 31, 83); */
   }
   
   .card-item {
@@ -49,9 +54,13 @@ body {
   
   .card-item-big {
     width: 1150px;
-    min-height: 500px;
+    min-height: 520px;
     margin: 0 auto;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
   }
   
   .card-item:nth-child(3n) {
@@ -88,7 +97,6 @@ body {
   }
   
   .card-img-big {
-    float: left;
     width: 400px;
     height: 470px;
     margin: 0 20px 0 0;
@@ -100,13 +108,13 @@ body {
     padding: 0 5px 5px 5px;
     box-sizing: border-box;
     font-size: 13px;
-  }
-  
-  .card-text p:last-child {
+    height: 170px;
     overflow: hidden;
-    height: 16px;
-    margin: 0;
   }
+
+  .card-text-big { 
+    height: auto;
+   }
   
   .card-text .bold-text {
     color: rgb(26, 0, 0);
@@ -179,6 +187,21 @@ body {
     color: #fff5e296;
     padding: 20px 0px;
     margin: 0;
+  }
+
+  .text-content {
+    max-width: 500px;
+  }
+  
+  .back-to-main-arrow {
+    width: 3vh;
+    height: 3vh;
+    position: absolute;
+    transform: rotate(225deg);
+    top: 0;
+    left: 0;
+    border-top: 3px solid rgb(255, 245, 226);
+    border-right: 3px solid rgb(255, 245, 226);
   }
   
   /* Блок с фильтрами */
@@ -267,7 +290,7 @@ body {
     box-shadow: 0 0 10px 5px rgb(250, 167, 1)
   }
   
-  .selectors .sparkling-selector {
+  .sparkling-selector {
     margin: 0 10px 0 0;
     border-radius: 10px;
     padding: 5px 10px;
@@ -552,4 +575,22 @@ body {
   .page {
     box-sizing: border-box;
     padding: 20px;
+  }
+
+/* media queries */
+
+  @media screen and (max-width: 600px) {
+    .card-img-big {
+      margin: 0;
+    }
+
+    .selectors {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .color-selector, .taste-selector, .sparkling-selector, .name-selector {
+      margin-bottom: 10px;
+    }
+
   }

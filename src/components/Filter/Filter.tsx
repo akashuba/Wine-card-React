@@ -23,7 +23,7 @@ class Filter extends Component<IProps> {
     const { filterBySparklingWines, filterByNameProps, filterByColorProps, filterByTasteProps } = this.props
     return (
       <section className="selectors">
-        <div className="winesColor">
+        <div className="color-selector">
           <label htmlFor="color-selector" className="visibility-hidden">
             Содержание сахара
                     </label>
@@ -37,7 +37,7 @@ class Filter extends Component<IProps> {
             <option value="rose">розовое</option>
           </select>
         </div>
-        <div>
+        <div className="taste-selector" >
           <label htmlFor="taste-selector" className="visibility-hidden">
             Содержание сахара
                     </label>
@@ -70,7 +70,7 @@ class Filter extends Component<IProps> {
                         <div className="checkbox-view" />
           </label>
         </div>
-        <div>
+        <div className="name-selector" >
           <label htmlFor="search-string" className="visibility-hidden">
             Поиск по названию
                     </label>
