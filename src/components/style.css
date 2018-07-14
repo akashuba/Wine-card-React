@@ -340,12 +340,12 @@ body {
   
   .add-wine-form-wrapper {
     position: fixed;
-    display: none;
     top: 0px;
     left: 0px;
     width: 2000px;
     height: 2000px;
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
   }
   
   .add-wine-form {
@@ -358,6 +358,8 @@ body {
     padding: 10px 30px 10px 20px;
     border-radius: 20px;
     box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.5);
+    max-height: 95%;
+    overflow: auto;
   }
   
   .add-wine-form ul {
