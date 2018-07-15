@@ -33,7 +33,7 @@ class WineCardContainer extends Component<Props, State> {
 
   public render() {
     const { cards } = this.props
-    const getCard = cards.filter((card) => card.name === getWineFromUrl())
+    const getCard = cards.filter((card) => card.name === getCardFromUrl())
     return (
       <React.Fragment >
         {getCard && getCard.length > 0 ?
@@ -43,10 +43,9 @@ class WineCardContainer extends Component<Props, State> {
       </React.Fragment >
     )
   }
-
 }
 
-function getWineFromUrl() {
+function getCardFromUrl() {
   return decodeURI(window.location.hash.replace(/#\/card-item\//g, '').replace(/%20/g, ' '))
 }
 
