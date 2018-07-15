@@ -5,7 +5,7 @@ import { HashRouter as Router, Route } from 'react-router-dom'
 import './components/style.css'
 import { Provider } from 'react-redux'
 import store from './store'
-import { WineCardContainer } from './components/WineCard/WineCardContainer'
+import WineCardContainer from './components/WineCard/WineCardContainer'
 
 ReactDOM.render(
     <React.Fragment>
