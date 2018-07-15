@@ -16,6 +16,10 @@ body {
     position: relative;
   }
 
+  .empty {
+    line-height: auto;
+  }
+
   .wine-card-logo {
     width: 500px;
     margin: 20px auto;
@@ -565,13 +569,6 @@ body {
   
   .form-sparkling-input:checked~* .form-checkbox-view::before {
     visibility: visible;
-  }
-
-  .about {
-    color: rgb(255, 245, 226);
-    font-family: 'Marck Script', cursive, Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    text-indent: 1.5em;
   }
 
   .page {

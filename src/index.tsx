@@ -1,18 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { HashRouter as Router, Route } from 'react-router-dom'
 import './components/style.css'
 import { Provider } from 'react-redux'
 import store from './store'
-import { WineCard } from './components/WineCard/WineCard'
-
-const About = () => (
-    <h1 className="about" >
-        Приложение создается для обмена опытом и по выбору вин разных сортов и категорий.
-         Использованы технологии: React, Redux, Typescript, PHP.
-    </h1>
-)
+import { WineCardContainer } from './components/WineCard/WineCardContainer'
 
 ReactDOM.render(
     <React.Fragment>
@@ -21,11 +14,7 @@ ReactDOM.render(
                 <Provider store={store} >
                     <div>
                         <Route exact path="/" component={App} />
-                        <Route path="/about" component={About} />
-                        <Route path="/card-item/:name" render={
-                            ({ location }) => {
-                                return <WineCard {...location.state} currentLocation={location.search} />
-                            }} />
+                        <Route path="/card-item/:name" component={WineCardContainer} />
                     </div>
                 </Provider>
             </div>

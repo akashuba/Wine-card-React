@@ -2,7 +2,6 @@ import * as React from 'react'
 import { ICard } from '../../types'
 import '../style.css'
 import { Link } from 'react-router-dom'
-// import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 interface IWithRoute extends ICard {
     currentLocation?: string
@@ -27,7 +26,7 @@ const WineCard = ({
     // backgroundImage: `url(${require(`${imgUrl}`)})`
     return (
 
-        <div className={currentLocation && currentLocation.length > 0 ? 'card-container' : ''} >
+        <div className={currentLocation && currentLocation.length > 0 ? 'card-container' : 'empty'} >
             {currentLocation && currentLocation.length > 0 ?
                 <Link to="/" >
                     <div className="back-to-main-arrow" ></div>
@@ -38,7 +37,8 @@ const WineCard = ({
                 `card-item card-item-big` : `card-item `}>
                 <div className={currentLocation && currentLocation.length > 0 ?
                     `card-img card-img-big` : `card-img `}
-                    style={{ backgroundImage: `url(${require(`${imgUrl}`)})` }}>
+                      style={{ backgroundImage: `url(
+                          ${require(`${imgUrl ? imgUrl : './img/wine_bottle.jpg'  }`)})` }}>
                     <div className={`wine-color ${colorType}`} />
                     <div className="wine-raiting">&#9733;{rating}&#9733;</div>
                 </div>
