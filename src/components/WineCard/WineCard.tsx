@@ -37,8 +37,7 @@ const WineCard = ({
                 `card-item card-item-big` : `card-item `}>
                 <div className={currentLocation && currentLocation.length > 0 ?
                     `card-img card-img-big` : `card-img `}
-                      style={{ backgroundImage: `url(
-                          ${require(`${imgUrl ? imgUrl : './img/wine_bottle.jpg'  }`)})` }}>
+                      style={{ backgroundImage: `url(${imgUrl} )` }}>
                     <div className={`wine-color ${colorType}`} />
                     <div className="wine-raiting">&#9733;{rating}&#9733;</div>
                 </div>

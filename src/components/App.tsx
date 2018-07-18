@@ -3,12 +3,14 @@ import WineList from './WineList/WineList'
 import Filter from './Filter/Filter'
 import { connect } from 'react-redux'
 import { ICard } from '../types'
+import { getCardsByFetch } from '../AC'
 
 interface IProps {
     cards: ICard[],
     isSparkling: boolean,
     nameLetter: string,
     allFilters: any
+    getCards: (cards: ICard[]) => void
 }
 
 class App extends Component<IProps> {
@@ -28,6 +30,7 @@ class App extends Component<IProps> {
             .then(response => response.json())
             .then(data => {
                 console.log('fetch', data)
+                this.props.getCards(data)
             })
             .catch(error => {
                 console.warn(error)
@@ -38,8 +41,14 @@ class App extends Component<IProps> {
         const cardResult = filterByInput(cards, allFilters)
         return (
             <React.Fragment>
-                <Filter  />
-                <WineList wines={cardResult} />
+                {cards && cards.length > 0 ?
+                    <div>
+                        <Filter />
+                        <WineList wines={cardResult} />
+                    </div>
+                    :
+                    <div>No data</div>
+                }
             </React.Fragment>
         )
     }
@@ -52,11 +61,15 @@ function mapStateToProps(state: IProps) {
     }
 }
 
+const mapDispatchToProps = (dispatch: any) => ({
+    getCards: (cards: ICard[]) => dispatch(getCardsByFetch(cards)),
+})
+
 function filterByInput(cards: ICard[], filterOption: any) {
     return (cards.filter(card => card.sparkling !== filterOption.sparkling.isSparkling)
-                 .filter(card => isMatching(card.name, filterOption.name.nameLetter))
-                 .filter(card => isMatching(card.colorType, filterOption.color.colorType))
-                 .filter(card => isMatching(card.sugarContent, filterOption.taste.tasteType))
+        .filter(card => isMatching(card.name, filterOption.name.nameLetter))
+        .filter(card => isMatching(card.colorType, filterOption.color.colorType))
+        .filter(card => isMatching(card.sugarContent, filterOption.taste.tasteType))
     )
 }
 
@@ -66,4 +79,4 @@ function isMatching(full: string, chunk: string) {
     return (full.indexOf(chunk) >= 0)
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

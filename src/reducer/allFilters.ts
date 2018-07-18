@@ -26,7 +26,7 @@ export default (allFilters = filtersDefault, action: IAction) => {
         return {
             ...allFilters,
             sparkling: {
-                isSparkling: payload ? 'none' : ''
+                isSparkling: payload ? null : ''
             }
         }
     }

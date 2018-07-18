@@ -578,18 +578,20 @@ body {
 
 /* media queries */
 
+@media screen and (max-width: 700px) {
+
+  .selectors {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .color-selector, .taste-selector, .sparkling-selector, .name-selector {
+    margin-bottom: 10px;
+  }
+}
+
   @media screen and (max-width: 600px) {
     .card-img-big {
       margin: 0;
     }
-
-    .selectors {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .color-selector, .taste-selector, .sparkling-selector, .name-selector {
-      margin-bottom: 10px;
-    }
-
   }

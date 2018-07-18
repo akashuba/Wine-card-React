@@ -1,4 +1,5 @@
-import { FILTER } from '../constants'
+import { FILTER, CARDS } from '../constants'
+import { ICard } from '../types'
 
 export function filterBySparkling(isChecked: boolean) {
     return {
@@ -25,5 +26,12 @@ export function filterByTaste(taste: string) {
     return {
         type: FILTER.FILTER_BY_TASTE,
         payload: taste
+    }
+}
+
+export function getCardsByFetch(cards: ICard[]) {
+    return {
+        type: CARDS.GET_CARDS_BY_FETCH,
+        payload: cards
     }
 }
