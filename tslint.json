@@ -11,7 +11,8 @@
       "ordered-imports": false,
       "no-console": false,
       "only-arrow-functions": false,
-      "arrow-parens": ["error", "as-needed"]
+      "arrow-parens": ["error", "as-needed"],
+      "no-trailing-whitespace": [true, "ignore-comments"]
     }
 
 }

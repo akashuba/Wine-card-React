@@ -10,7 +10,7 @@ const WineAddPopup = ({togglePopup}: IProps): React.ReactElement<IProps> => {
     <section className="add-wine-form-wrapper">
       <div className="add-wine-form">
         <h3 className="form-titile">Добавить карту</h3>
-        <form method="post" encType="multipart/form-data" name="addcard">
+        <form   onSubmit={(e) => sendFormData(e)}  method="post" encType="multipart/form-data" name="addcard">
           <ul>
             <li>
               <label htmlFor="contributor">Представьтесь</label>
@@ -107,6 +107,30 @@ const WineAddPopup = ({togglePopup}: IProps): React.ReactElement<IProps> => {
       </div>
     </section>
   )
+}
+
+const sendFormData =  (e: any): void => {
+  {
+    const oData = new FormData(e.target)
+    const oReq = new XMLHttpRequest()
+    oReq.open('POST', 'functions.php', true)
+    oReq.onload = function(oEvent) {
+
+        if (oReq.status === 200) {
+            console.log('Uploaded!')
+            // renderCards();
+            // addWineForm.style.display = 'none';
+            //  console.log(oReq.response);
+            //    var jsonResp = JSON.parse(oReq.response);
+            //     console.log(oReq.response); 
+        } else {
+            console.warn('Error ' + oReq.status + ' occurred when trying to upload your file')
+        }
+    }
+
+    oReq.send(oData)
+    e.preventDefault()
+}
 }
 
 export { WineAddPopup }
