@@ -10,7 +10,8 @@ const WineAddPopup = ({togglePopup}: IProps): React.ReactElement<IProps> => {
     <section className="add-wine-form-wrapper">
       <div className="add-wine-form">
         <h3 className="form-titile">Добавить карту</h3>
-        <form   onSubmit={(e) => sendFormData(e)}  method="post" encType="multipart/form-data" name="addcard">
+        <form   onSubmit={(e) => sendFormData(e, togglePopup)}
+         method="post" encType="multipart/form-data" name="addcard">
           <ul>
             <li>
               <label htmlFor="contributor">Представьтесь</label>
@@ -109,7 +110,7 @@ const WineAddPopup = ({togglePopup}: IProps): React.ReactElement<IProps> => {
   )
 }
 
-const sendFormData =  (e: any): void => {
+const sendFormData =  (e: any, togglePopup: any): any => {
   {
     const oData = new FormData(e.target)
     const oReq = new XMLHttpRequest()
@@ -118,6 +119,7 @@ const sendFormData =  (e: any): void => {
 
         if (oReq.status === 200) {
             console.log('Uploaded!')
+            togglePopup()
             // renderCards();
             // addWineForm.style.display = 'none';
             //  console.log(oReq.response);
