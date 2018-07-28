@@ -119,12 +119,7 @@ const sendFormData =  (e: any, togglePopup: any): any => {
 
         if (oReq.status === 200) {
             console.log('Uploaded!')
-            togglePopup()
-            // renderCards();
-            // addWineForm.style.display = 'none';
-            //  console.log(oReq.response);
-            //    var jsonResp = JSON.parse(oReq.response);
-            //     console.log(oReq.response); 
+            window.location.reload()
         } else {
             console.warn('Error ' + oReq.status + ' occurred when trying to upload your file')
         }
