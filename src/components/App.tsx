@@ -4,6 +4,7 @@ import Filter from './Filter/Filter'
 import { connect } from 'react-redux'
 import { ICard } from '../types'
 import { getCardsByFetch } from '../AC'
+import Spinner from './Spinner/Spinner'
 
 interface IProps {
     cards: ICard[],
@@ -47,7 +48,7 @@ class App extends Component<IProps> {
                         <WineList wines={cardResult} />
                     </div>
                     :
-                    <div>No data</div>
+                    <Spinner />
                 }
             </React.Fragment>
         )

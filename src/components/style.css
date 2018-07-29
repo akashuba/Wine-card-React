@@ -586,6 +586,28 @@ body {
     padding: 20px;
   }
 
+/* Spinner */
+
+@keyframes increase {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  width: 10px;
+  height: 10px;
+  background: #fff5e2;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: calc(50% - 15px);
+  transform-origin: 20px;
+  animation: increase;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 /* media queries */
 
 @media screen and (max-width: 700px) {
@@ -618,5 +640,10 @@ body {
 
     .card-img {
       width: 100%;
+    }
+
+    .add-wine-form {
+      width: 100%;
+      left: 0;
     }
   }
