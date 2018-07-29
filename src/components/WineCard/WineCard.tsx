@@ -29,7 +29,9 @@ const WineCard = ({
         <div className={currentLocation && currentLocation.length > 0 ? 'card-container' : 'empty'} >
             {currentLocation && currentLocation.length > 0 ?
                 <Link to="/" >
+                <div className="back-arrow-container" >
                     <div className="back-to-main-arrow" ></div>
+                </div>
                 </Link>
                 : null
             }

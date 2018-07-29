@@ -33,6 +33,7 @@ class WineCardContainer extends Component<Props, State> {
 
   public render() {
     const { cards } = this.props
+    console.log(cards)
     const getCard = cards.filter((card) => card.name === getCardFromUrl())
     return (
       <React.Fragment >

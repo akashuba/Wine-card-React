@@ -35,7 +35,7 @@ body {
   }
   
   .wine-cards {
-    min-width: 385px;
+    /* min-width: 385px; */
     margin: 0 auto;
     box-sizing: border-box;
     padding: 20px;
@@ -49,7 +49,8 @@ body {
     height: 525px;
     background-color: rgb(255, 245, 226);
     border-radius: 10px;
-    margin: 0 30px 20px 0;
+    margin-right: 30px;
+    margin-bottom: 20px;
     overflow: hidden;
     box-sizing: border-box;
     padding: 0 0 10px 0;
@@ -147,13 +148,13 @@ body {
     ;
   }
   
-  .card-img .wine-raiting {
+  .wine-raiting {
     text-align: center;
     font-size: 24px;
     color: rgb(250, 167, 1);
     position: absolute;
     top: 102%;
-    left: 80%;
+    right: 2%;
   }
   
   .card-item:hover .all-Wines-Lis {
@@ -200,7 +201,6 @@ body {
   .back-to-main-arrow {
     width: 3vh;
     height: 3vh;
-    position: absolute;
     transform: rotate(225deg);
     top: 0;
     left: 0;
@@ -208,6 +208,16 @@ body {
     border-right: 3px solid rgb(255, 245, 226);
   }
   
+  .back-arrow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+  }
+
   /* Блок с фильтрами */
   
   .selectors {
@@ -593,5 +603,20 @@ body {
   @media screen and (max-width: 600px) {
     .card-img-big {
       margin: 0;
+    }
+
+    .wine-cards {
+      display: block;
+      width: 100%;
+      padding: 0;
+    }
+
+    .card-item {
+      margin-right: 0;
+      width: 100%;
+    }
+
+    .card-img {
+      width: 100%;
     }
   }
