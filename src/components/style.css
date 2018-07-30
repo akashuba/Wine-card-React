@@ -1,40 +1,39 @@
-
 body {
     padding: 0;
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14px;
     background-color: rgb(59, 8, 29);
-  }
+}
 
-  a {
+a {
     text-decoration: none;
-  }
-  
-  .card-container {
-    padding-top: 35px;
+}
+
+.card-container {
+    padding-top: 45px;
     position: relative;
-  }
+}
 
-  .empty {
+.empty {
     line-height: auto;
-  }
+}
 
-  .wine-card-logo {
+.wine-card-logo {
     width: 500px;
     margin: 20px auto;
     cursor: pointer;
-  }
-  
-  .visibility-hidden {
+}
+
+.visibility-hidden {
     position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;
     height: 1px;
     margin: -1px;
-  }
-  
-  .wine-cards {
+}
+
+.wine-cards {
     /* min-width: 385px; */
     margin: 0 auto;
     box-sizing: border-box;
@@ -42,9 +41,9 @@ body {
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
-  }
-  
-  .card-item {
+}
+
+.card-item {
     width: 350px;
     height: 525px;
     background-color: rgb(255, 245, 226);
@@ -55,9 +54,9 @@ body {
     box-sizing: border-box;
     padding: 0 0 10px 0;
     position: relative;
-  }
-  
-  .card-item-big {
+}
+
+.card-item-big {
     width: 1150px;
     min-height: 520px;
     margin: 0 auto;
@@ -66,13 +65,13 @@ body {
     flex-wrap: wrap;
     width: auto;
     height: auto;
-  }
-  
-  .card-item:nth-child(3n) {
+}
+
+.card-item:nth-child(3n) {
     margin: 0 0 20px 0;
-  }
-  
-  .card-title {
+}
+
+.card-title {
     font-family: 'Marck Script', cursive;
     font-size: 22px;
     margin: 0 0 10px 0;
@@ -82,86 +81,85 @@ body {
     font-weight: normal;
     width: 60%;
     margin: 0 auto;
-  }
-  
-  .card-title-big {
+}
+
+.card-title-big {
     margin: 15px auto;
-  }
-  
-  .card-item p {
+}
+
+.card-item p {
     margin: 0 0 10px 0;
-  }
-  
-  .card-img {
+}
+
+.card-img {
     position: relative;
     width: 350px;
     height: 300px;
     background-size: cover;
     background-position: 50% 90%;
     border-radius: 10px 10px 0 0;
-  }
-  
-  .card-img-big {
+}
+
+.card-img-big {
     width: 400px;
     height: 470px;
     margin: 0 20px 0 0;
     border-radius: 10px 0 10px 0;
-  }
-  
-  .card-text {
+}
+
+.card-text {
     color: rgb(83, 78, 78);
     padding: 0 5px 5px 5px;
     box-sizing: border-box;
     font-size: 13px;
     height: 170px;
     overflow: hidden;
-  }
+}
 
-  .card-text-big { 
+.card-text-big {
     height: auto;
-   }
-  
-  .card-text .bold-text {
+}
+
+.card-text .bold-text {
     color: rgb(26, 0, 0);
     font-size: 13px;
-  }
-  
-  .card-img .wine-color {
+}
+
+.card-img .wine-color {
     position: absolute;
     top: 103%;
     left: 3%;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-  }
-  
-  .red {
+}
+
+.red {
     background-color: rgb(154, 31, 73);
-  }
-  
-  .white {
+}
+
+.white {
     background-color: rgb(253, 215, 81);
-  }
-  
-  .rose {
+}
+
+.rose {
     background-color: #f864b0;
-    ;
-  }
-  
-  .wine-raiting {
+}
+
+.wine-raiting {
     text-align: center;
     font-size: 24px;
     color: rgb(250, 167, 1);
     position: absolute;
     top: 102%;
     right: 2%;
-  }
-  
-  .card-item:hover .all-Wines-Lis {
+}
+
+.card-item:hover .all-Wines-Lis {
     visibility: visible;
-  }
-  
-  .all-Wines-Lis {
+}
+
+.all-Wines-Lis {
     position: absolute;
     top: 20px;
     left: 950px;
@@ -170,35 +168,35 @@ body {
     font-family: 'Marck Script', cursive;
     text-shadow: gray 2px 3px 4px;
     visibility: hidden;
-  }
-  
-  .all-Wines-Lis:hover {
+}
+
+.all-Wines-Lis:hover {
     text-shadow: none;
-  }
-  
-  .display-none {
+}
+
+.display-none {
     display: none;
-  }
-  
-  .footer {
+}
+
+.footer {
     width: 1150px;
     margin: 0 auto;
     border-radius: 0 0 10px 10px;
     background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .footer-text {
+}
+
+.footer-text {
     text-align: center;
     color: #fff5e296;
     padding: 20px 0px;
     margin: 0;
-  }
+}
 
-  .text-content {
+.text-content {
     max-width: 400px;
-  }
-  
-  .back-to-main-arrow {
+}
+
+.back-to-main-arrow {
     width: 3vh;
     height: 3vh;
     transform: rotate(225deg);
@@ -206,9 +204,9 @@ body {
     left: 0;
     border-top: 3px solid rgb(255, 245, 226);
     border-right: 3px solid rgb(255, 245, 226);
-  }
-  
-  .back-arrow-container {
+}
+
+.back-arrow-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -216,11 +214,20 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1vh;
-  }
+}
 
-  /* Блок с фильтрами */
-  
-  .selectors {
+.wine-cards-title {
+    max-width: 570px;
+    margin: 0 auto 30px;
+}
+
+.wine-cards-title-container {
+    display: flex;
+}
+
+/* Блок с фильтрами */
+
+.selectors {
     box-sizing: border-box;
     padding: 5px 20px 0 20px;
     display: flex;
@@ -230,33 +237,34 @@ body {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px 10px 0 0;
-  }
-  
-  .selectors-arrow {
+}
+
+.selectors-arrow {
     background-position: 95% 50%;
     background-repeat: no-repeat;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-  }
-  
-  .selectors #color-selector {
+}
+
+.selectors #color-selector {
     border-radius: 10px;
     padding: 2px 20px 2px 5px;
     border: 1px solid rgb(212, 212, 212);
     margin: 0 10px 0 0;
     background-color: #fff5e2;
-  }
-  
-  .selectors #color-selector:focus {
+}
+
+.selectors #color-selector:focus {
     box-shadow: 0 0 10px 5px rgb(250, 167, 1);
-  }
-  
-  .selectors .redWine, .selectors .whiteWine {
+}
+
+.selectors .redWine,
+.selectors .whiteWine {
     margin: 0 10px 0 0;
-  }
-  
-  .selectors .add-button {
+}
+
+.selectors .add-button {
     background-color: rgb(154, 31, 83);
     cursor: pointer;
     color: white;
@@ -265,67 +273,67 @@ body {
     border: 1px solid rgb(154, 31, 83);
     font-weight: bold;
     box-shadow: 0 0 0px 2px #fff5e2;
-  }
-  
-  .selectors .add-button:hover {
+}
+
+.selectors .add-button:hover {
     background-color: rgb(105, 22, 55);
     border: 1px solid rgb(105, 22, 55);
     box-shadow: none;
-  }
-  
-  .selectors .add-button:active {
+}
+
+.selectors .add-button:active {
     background-color: rgb(78, 16, 41);
     border: 1px solid rgb(78, 16, 41);
     box-shadow: none;
-  }
-  
-  .selectors #search-string {
+}
+
+.selectors #search-string {
     border-radius: 5px;
     border: 1px solid gray;
     padding: 2px 5px 2px 10px;
     width: 170px;
     margin: 0 10px 0 0;
     background-color: #fff5e2;
-  }
-  
-  .selectors #search-string:focus {
+}
+
+.selectors #search-string:focus {
     box-shadow: 0 0 10px 5px rgb(250, 167, 1);
-  }
-  
-  .selectors #taste-selector {
+}
+
+.selectors #taste-selector {
     border-radius: 10px;
     padding: 2px 20px 2px 5px;
     border: 1px solid rgb(212, 212, 212);
     margin: 0 10px 0 0;
     background-color: #fff5e2;
-  }
-  
-  .selectors #taste-selector:focus {
-    box-shadow: 0 0 10px 5px rgb(250, 167, 1)
-  }
-  
-  .sparkling-selector {
+}
+
+.selectors #taste-selector:focus {
+    box-shadow: 0 0 10px 5px rgb(250, 167, 1);
+}
+
+.sparkling-selector {
     margin: 0 10px 0 0;
     border-radius: 10px;
     padding: 5px 10px;
     background-color: #fff5e2;
     position: relative;
-  }
-  
-  .selectors #sparkling-selector:checked+label {
+}
+
+.selectors #sparkling-selector:checked + label {
     box-shadow: 0 0 10px 5px rgb(250, 167, 1);
-  }
-  
-  .selectors #sparkling-selector:checked~* .checkbox-view::before {
+}
+
+.selectors #sparkling-selector:checked ~ * .checkbox-view::before {
     visibility: visible;
-  }
-  
-  .sparkling-selector label {
+}
+
+.sparkling-selector label {
     margin: 0;
     padding: 0 30px 0 0;
-  }
-  
-  .checkbox-view {
+}
+
+.checkbox-view {
     width: 16px;
     height: 16px;
     border: 2px solid rgb(84, 77, 69);
@@ -335,10 +343,10 @@ body {
     position: absolute;
     left: 80px;
     top: 3px;
-  }
-  
-  .checkbox-view::before {
-    content: "";
+}
+
+.checkbox-view::before {
+    content: '';
     position: absolute;
     width: 8px;
     height: 8px;
@@ -346,13 +354,13 @@ body {
     top: 4px;
     left: 4px;
     visibility: hidden;
-  }
-  
-  /* --- */
-  
-  /*  Стили формы добавления вина */
-  
-  .add-wine-form-wrapper {
+}
+
+/* --- */
+
+/*  Стили формы добавления вина */
+
+.add-wine-form-wrapper {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -360,9 +368,9 @@ body {
     height: 2000px;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
-  }
-  
-  .add-wine-form {
+}
+
+.add-wine-form {
     width: 420px;
     background: linear-gradient(45deg, rgb(48, 8, 22), rgb(170, 82, 113));
     position: fixed;
@@ -374,29 +382,30 @@ body {
     box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.5);
     max-height: 95%;
     overflow: auto;
-  }
-  
-  .add-wine-form ul {
+}
+
+.add-wine-form ul {
     margin: 20px 0 0 0;
     list-style: none;
     padding: 0;
-  }
-  
-  .add-wine-form li {
+}
+
+.add-wine-form li {
     display: flex;
     justify-content: space-between;
     margin: 0 0 12px 0;
-  }
-  
-  .add-wine-form li:last-child {
+}
+
+.add-wine-form li:last-child {
     margin: 0;
-  }
-  
-  .add-wine-form #formSubmit {
+}
+
+.add-wine-form #formSubmit {
     text-align: right;
-  }
-  
-  .add-wine-form .fileFild, .add-wine-form #formSubmit {
+}
+
+.add-wine-form .fileFild,
+.add-wine-form #formSubmit {
     text-align: center;
     padding: 7px 15px;
     background: linear-gradient(to top, rgb(154, 31, 83) 0%, rgb(158, 60, 94) 36%, rgb(212, 95, 135) 100%);
@@ -406,38 +415,40 @@ body {
     font-weight: bold;
     box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.5);
     border: 1px;
-  }
-  
-  .add-wine-form label {
+}
+
+.add-wine-form label {
     margin: 0 10px 0 0;
     color: white;
-  }
-  
-  .add-wine-form .fileFild:hover, .add-wine-form #formSubmit:hover {
+}
+
+.add-wine-form .fileFild:hover,
+.add-wine-form #formSubmit:hover {
     background: linear-gradient(to top, rgb(212, 95, 135) 0%, rgb(158, 60, 94) 36%, rgb(154, 31, 83) 100%);
-  }
-  
-  .add-wine-form .fileFild:active, .add-wine-form #formSubmit:active {
+}
+
+.add-wine-form .fileFild:active,
+.add-wine-form #formSubmit:active {
     box-shadow: inset 0 1px 1px 1px rgba(0, 0, 0, 0.5);
-  }
-  
-  .add-wine-form input {
+}
+
+.add-wine-form input {
     border-radius: 10px;
     border: 1px solid rgb(212, 212, 212);
-  }
-  
-  .add-wine-form input[type="text"] {
+}
+
+.add-wine-form input[type='text'] {
     padding: 3px 10px;
     width: 180px;
-  }
-  
-  .add-wine-form input[type="radio"] {
+}
+
+.add-wine-form input[type='radio'] {
     width: 20px;
     height: 20px;
     margin: 0 180px 0 0;
-  }
-  
-  #noteText {
+}
+
+#noteText {
     resize: none;
     height: 70px;
     width: 100%;
@@ -446,17 +457,17 @@ body {
     box-sizing: border-box;
     padding: 0 10px;
     border: 1px solid rgb(212, 212, 212);
-  }
-  
-  .add-wine-form #formRaiting {
+}
+
+.add-wine-form #formRaiting {
     border-radius: 10px;
     margin: 0 152px 0 0;
     padding: 2px 0 2px 10px;
     border: 1px solid rgb(212, 212, 212);
     width: 49px;
-  }
-  
-  #formClose {
+}
+
+#formClose {
     position: absolute;
     width: 25px;
     height: 25px;
@@ -466,10 +477,10 @@ body {
     border: 1px;
     background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
-  }
-  
-  #formClose::before {
-    content: "";
+}
+
+#formClose::before {
+    content: '';
     width: 20px;
     height: 3px;
     position: absolute;
@@ -478,10 +489,10 @@ body {
     background-color: white;
     transform: rotate(45deg);
     border-radius: 10px;
-  }
-  
-  #formClose::after {
-    content: "";
+}
+
+#formClose::after {
+    content: '';
     width: 20px;
     height: 3px;
     position: absolute;
@@ -490,71 +501,71 @@ body {
     background-color: white;
     transform: rotate(-45deg);
     border-radius: 10px;
-  }
-  
-  #file-button {
+}
+
+#file-button {
     justify-content: flex-start;
     align-content: center;
-  }
-  
-  .noteText-wraper {
+}
+
+.noteText-wraper {
     width: 100%;
-  }
-  
-  .form-titile {
+}
+
+.form-titile {
     font-family: 'Marck Script', cursive;
     margin: 0;
     padding: 0;
     color: white;
     text-align: center;
     font-size: 25px;
-  }
-  
-  #priceText {
+}
+
+#priceText {
     box-sizing: border-box;
     padding: 3px 3px 3px 10px;
     width: 201px;
-  }
-  
-  .add-wine-form .file-text {
+}
+
+.add-wine-form .file-text {
     color: rgba(255, 255, 255, 0.8);
     margin: 0;
     padding: 5px 0 0 0;
     font-size: 12px;
     overflow: hidden;
-  }
-  
-  .add-wine-form #sugarContent {
+}
+
+.add-wine-form #sugarContent {
     border-radius: 10px;
     margin: 0 10px 0 0;
     padding: 2px 0px 2px 10px;
     border: 1px solid rgb(212, 212, 212);
     width: 190px;
     box-sizing: border-box;
-  }
-  
-  .wineColor select {
+}
+
+.wineColor select {
     border-radius: 10px;
     margin: 0 10px 0 0;
     padding: 2px 0px 2px 10px;
     border: 1px solid rgb(212, 212, 212);
     width: 190px;
     box-sizing: border-box;
-  }
-  
-  .add-wine-form #raiting-wrapper {
+}
+
+.add-wine-form #raiting-wrapper {
     justify-content: space-between;
-  }
-  
-  .add-wine-form #sparkling {
+}
+
+.add-wine-form #sparkling {
     margin: 0 185px 0 0;
-  }
-  
-  .form-sparkling-lable {
+}
+
+.form-sparkling-lable {
     position: relative;
-  }
-  
-  .form-checkbox-view {
+}
+
+.form-checkbox-view {
     width: 16px;
     height: 16px;
     border: 2px solid rgb(212, 212, 212);
@@ -564,10 +575,10 @@ body {
     position: absolute;
     left: 170px;
     top: 0;
-  }
-  
-  .form-checkbox-view::before {
-    content: "";
+}
+
+.form-checkbox-view::before {
+    content: '';
     position: absolute;
     width: 8px;
     height: 8px;
@@ -575,75 +586,77 @@ body {
     top: 4px;
     left: 4px;
     visibility: hidden;
-  }
-  
-  .form-sparkling-input:checked~* .form-checkbox-view::before {
-    visibility: visible;
-  }
+}
 
-  .page {
+.form-sparkling-input:checked ~ * .form-checkbox-view::before {
+    visibility: visible;
+}
+
+.page {
     box-sizing: border-box;
     padding: 20px;
-  }
+}
 
 /* Spinner */
 
 @keyframes increase {
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }
 .spinner {
-  width: 10px;
-  height: 10px;
-  background: #fff5e2;
-  border-radius: 50%;
-  position: fixed;
-  top: 50%;
-  left: calc(50% - 15px);
-  transform-origin: 20px;
-  animation: increase;
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+    width: 10px;
+    height: 10px;
+    background: #fff5e2;
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    left: calc(50% - 15px);
+    transform-origin: 20px;
+    animation: increase;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 /* media queries */
 
 @media screen and (max-width: 700px) {
+    .selectors {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  .selectors {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .color-selector, .taste-selector, .sparkling-selector, .name-selector {
-    margin-bottom: 10px;
-  }
+    .color-selector,
+    .taste-selector,
+    .sparkling-selector,
+    .name-selector {
+        margin-bottom: 10px;
+    }
 }
 
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .card-img-big {
-      margin: 0;
+        margin: 0;
     }
 
     .wine-cards {
-      display: block;
-      width: 100%;
-      padding: 0;
+        display: block;
+        width: 100%;
+        padding: 0;
     }
 
     .card-item {
-      margin-right: 0;
-      width: 100%;
+        margin-right: 0;
+        width: 100%;
     }
 
     .card-img {
-      width: 100%;
+        width: 100%;
     }
 
     .add-wine-form {
-      width: 100%;
-      left: 0;
+        width: 100%;
+        left: 0;
     }
-  }
+}
