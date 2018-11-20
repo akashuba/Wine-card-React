@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { ICard } from '../types'
 import { getCardsByFetch } from '../AC'
 import Spinner from './Spinner/Spinner'
+import { ajax } from 'rxjs/ajax'
+import { map, catchError } from 'rxjs/operators'
 
 interface IProps {
     cards: ICard[]
@@ -30,13 +32,24 @@ class App extends Component<IProps> {
             })
             .then(response => response.json())
             .then(data => {
-                console.log('fetch', data)
                 this.props.getCards(data)
             })
             .catch(error => {
                 console.warn(error)
             })
+
+        const obs$ = ajax.getJSON(`./winecardsJSON.json`).pipe(
+            map(res => res),
+            catchError(error => {
+                console.log('error: ', error)
+                return error
+            }),
+        )
+        obs$.subscribe(function(res) {
+            console.log(res)
+        })
     }
+
     public render() {
         const { cards, allFilters } = this.props
         const cardResult = filterByInput(cards, allFilters)
