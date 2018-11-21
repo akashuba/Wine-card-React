@@ -1,18 +1,16 @@
 {
-  "extends": ["tslint:recommended"],
-  "rules": {
-      "no-require-imports": false,
-      "quotemark": [
-        true, "single", "jsx-double", "avoid-escape"
-      ],
-      "semicolon": [true, "never"],
-      "object-literal-sort-keys": [false],
-      "trailing-comma": [false],
-      "ordered-imports": false,
-      "no-console": false,
-      "only-arrow-functions": false,
-      "arrow-parens": ["error", "as-needed"],
-      "no-trailing-whitespace": [true, "ignore-comments"]
+    "extends": ["tslint:recommended"],
+    "rules": {
+        "no-require-imports": false,
+        "quotemark": [true, "single", "jsx-double", "avoid-escape"],
+        "semicolon": [true, "never"],
+        "object-literal-sort-keys": [false],
+        "trailing-comma": [false],
+        "ordered-imports": false,
+        "no-console": false,
+        "only-arrow-functions": false,
+        "arrow-parens": ["error", "as-needed"],
+        "no-trailing-whitespace": [true, "ignore-comments"],
+        "interface-name": [false, "never-prefix"]
     }
-
 }

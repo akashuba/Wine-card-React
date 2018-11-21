@@ -3,10 +3,8 @@ import WineList from './WineList/WineList'
 import Filter from './Filter/Filter'
 import { connect } from 'react-redux'
 import { ICard } from '../types'
-import { getCardsByFetch } from '../AC'
+import { getCardsByFetch, startFetchData } from '../AC'
 import Spinner from './Spinner/Spinner'
-import { ajax } from 'rxjs/ajax'
-import { map, catchError } from 'rxjs/operators'
 
 interface IProps {
     cards: ICard[]
@@ -14,6 +12,7 @@ interface IProps {
     nameLetter: string
     allFilters: any
     getCards: (cards: ICard[]) => void
+    startFetch: () => void
 }
 
 class App extends Component<IProps> {
@@ -21,33 +20,7 @@ class App extends Component<IProps> {
         super(props)
     }
     public componentDidMount() {
-        fetch('./winecardsJSON.json', {
-            method: 'GET',
-        })
-            .then(response => {
-                if (response.status !== 200 && response.status !== 304) {
-                    return Promise.reject(new Error(response.statusText))
-                }
-                return Promise.resolve(response)
-            })
-            .then(response => response.json())
-            .then(data => {
-                this.props.getCards(data)
-            })
-            .catch(error => {
-                console.warn(error)
-            })
-
-        const obs$ = ajax.getJSON(`./winecardsJSON.json`).pipe(
-            map(res => res),
-            catchError(error => {
-                console.log('error: ', error)
-                return error
-            }),
-        )
-        obs$.subscribe(function(res) {
-            console.log(res)
-        })
+        this.props.startFetch()
     }
 
     public render() {
@@ -80,14 +53,17 @@ function mapStateToProps(state: IProps) {
 
 const mapDispatchToProps = (dispatch: any) => ({
     getCards: (cards: ICard[]) => dispatch(getCardsByFetch(cards)),
+    startFetch: () => dispatch(startFetchData()),
 })
 
 function filterByInput(cards: ICard[], filterOption: any) {
     return cards
-        .filter(card => card.sparkling !== filterOption.sparkling.isSparkling)
-        .filter(card => isMatching(card.name, filterOption.name.nameLetter))
-        .filter(card => isMatching(card.colorType, filterOption.color.colorType))
-        .filter(card => isMatching(card.sugarContent, filterOption.taste.tasteType))
+        ? cards
+              .filter(card => card.sparkling !== filterOption.sparkling.isSparkling)
+              .filter(card => isMatching(card.name, filterOption.name.nameLetter))
+              .filter(card => isMatching(card.colorType, filterOption.color.colorType))
+              .filter(card => isMatching(card.sugarContent, filterOption.taste.tasteType))
+        : []
 }
 
 function isMatching(full: string, chunk: string) {

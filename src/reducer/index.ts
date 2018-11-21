@@ -1,8 +1,10 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 import cardReducers from './cards'
 import allFilters from './allFilters'
+import error from './error'
 
-export default  combineReducers({
+export default combineReducers({
     cards: cardReducers,
-    allFilters
+    allFilters,
+    error,
 })

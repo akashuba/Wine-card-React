@@ -6,5 +6,11 @@ export enum FILTER {
 }
 
 export enum CARDS {
-    GET_CARDS_BY_FETCH = 'GET_CARDS_BY_FETCH'
+    GET_CARDS_BY_FETCH = 'GET_CARDS_BY_FETCH',
+    START_FETCH = 'START_FETCH',
+    END_FETCH = 'END_FETCH',
+}
+
+export enum ERROR {
+    FETCH_ERROR = 'FETCH_ERROR',
 }

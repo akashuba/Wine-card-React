@@ -1,9 +1,8 @@
-// import defaultCards from '../WinesBase'
 import { CARDS } from '../constants'
 import { ICard } from '../types'
 
 interface IAction {
-    type: string,
+    type: string
     payload: string | ICard[]
 }
 
