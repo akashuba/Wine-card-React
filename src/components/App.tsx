@@ -30,7 +30,6 @@ class App extends Component<IProps> {
             })
             .then(response => response.json())
             .then(data => {
-                console.log('fetch', data)
                 this.props.getCards(data)
             })
             .catch(error => {
