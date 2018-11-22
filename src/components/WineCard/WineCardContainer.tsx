@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { WineCard } from './WineCard'
 import { ICard } from '../../types'
 import { connect } from 'react-redux'
+import { WithCards } from '../WithCards'
 
 interface IReduxProps {
     cards: ICard[]
@@ -32,7 +33,7 @@ class WineCardContainer extends Component<Props, State> {
 
     public render() {
         const { cards } = this.props
-        const getCard = cards.filter(card => card.name === getCardFromUrl())
+        const getCard = cards ? cards.filter(card => card.name === getCardFromUrl()) : []
         return (
             <React.Fragment>
                 {getCard && getCard.length > 0 ? (
@@ -55,4 +56,9 @@ function mapStateToProps(state: IReduxProps) {
     }
 }
 
-export default connect(mapStateToProps)(WineCardContainer)
+const WineCardContainerWithCard: any = WithCards(WineCardContainer)
+
+export default connect(
+    mapStateToProps,
+    null,
+)(WineCardContainerWithCard)

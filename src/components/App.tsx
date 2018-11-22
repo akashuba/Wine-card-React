@@ -4,7 +4,8 @@ import Filter from './Filter/Filter'
 import { connect } from 'react-redux'
 import { ICard } from '../types'
 import { getCardsByFetch } from '../AC'
-import Spinner from './Spinner/Spinner'
+import { Spinner } from './Spinner/Spinner'
+import { WithCards } from './WithCards'
 
 interface IProps {
     cards: ICard[]
@@ -18,27 +19,10 @@ class App extends Component<IProps> {
     constructor(props: IProps) {
         super(props)
     }
-    public componentDidMount() {
-        fetch('./winecardsJSON.json', {
-            method: 'GET',
-        })
-            .then(response => {
-                if (response.status !== 200 && response.status !== 304) {
-                    return Promise.reject(new Error(response.statusText))
-                }
-                return Promise.resolve(response)
-            })
-            .then(response => response.json())
-            .then(data => {
-                this.props.getCards(data)
-            })
-            .catch(error => {
-                console.warn(error)
-            })
-    }
+
     public render() {
         const { cards, allFilters } = this.props
-        const cardResult = filterByInput(cards, allFilters)
+        const cardResult = cards ? filterByInput(cards, allFilters) : []
         return (
             <React.Fragment>
                 <div className="wine-cards-title-container">
@@ -82,7 +66,9 @@ function isMatching(full: string, chunk: string) {
     return full.indexOf(chunk) >= 0
 }
 
+const AppWithCards: any = WithCards(App)
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(App)
+)(AppWithCards)
