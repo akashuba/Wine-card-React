@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { ICard } from '../types'
 import { getCardsByFetch } from '../AC'
 import { Spinner } from './Spinner/Spinner'
-import { WithCards } from './WithCards'
 
 interface IProps {
     cards: ICard[]
@@ -66,9 +65,7 @@ function isMatching(full: string, chunk: string) {
     return full.indexOf(chunk) >= 0
 }
 
-const AppWithCards: any = WithCards(App)
-
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(AppWithCards)
+)(App)

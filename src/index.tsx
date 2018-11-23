@@ -6,16 +6,17 @@ import './components/style.css'
 import { Provider } from 'react-redux'
 import store from './store'
 import WineCardContainer from './components/WineCard/WineCardContainer'
+import { WithCards } from './components/WithCards'
 
 ReactDOM.render(
     <React.Fragment>
         <Router>
-            <div className="page" >
-                <Provider store={store} >
-                    <div>
+            <div className="page">
+                <Provider store={store}>
+                    <WithCards>
                         <Route exact path="/" component={App} />
                         <Route path="/card-item/:name" component={WineCardContainer} />
-                    </div>
+                    </WithCards>
                 </Provider>
             </div>
         </Router>

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { WineCard } from './WineCard'
 import { ICard } from '../../types'
 import { connect } from 'react-redux'
-import { WithCards } from '../WithCards'
 
 interface IReduxProps {
     cards: ICard[]
@@ -56,9 +55,7 @@ function mapStateToProps(state: IReduxProps) {
     }
 }
 
-const WineCardContainerWithCard: any = WithCards(WineCardContainer)
-
 export default connect(
     mapStateToProps,
     null,
-)(WineCardContainerWithCard)
+)(WineCardContainer)
