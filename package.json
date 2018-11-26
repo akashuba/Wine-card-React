@@ -19,7 +19,9 @@
     "scripts": {
         "start": "react-scripts-ts start",
         "build": "react-scripts-ts build",
-        "test": "react-scripts-ts test --env=jsdom",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
         "eject": "react-scripts-ts eject"
     },
     "devDependencies": {
@@ -29,7 +31,12 @@
         "@types/react-redux": "5.0.14",
         "@types/react-router-dom": "4.2.6",
         "@types/redux": "3.6.0",
+        "enzyme": "^3.7.0",
+        "enzyme-adapter-react-16": "^1.7.0",
+        "enzyme-to-json": "^3.3.4",
+        "jest": "^23.6.0",
         "react-router-dom": "4.2.2",
+        "react-test-renderer": "^16.6.3",
         "redux-devtools": "3.4.1",
         "typescript": "2.8.3"
     }
