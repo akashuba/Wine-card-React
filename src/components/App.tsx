@@ -59,7 +59,7 @@ function filterByInput(cards: ICard[], filterOption: any) {
         .filter(card => isMatching(card.sugarContent, filterOption.taste.tasteType))
 }
 
-function isMatching(full: string, chunk: string) {
+export function isMatching(full: string, chunk: string) {
     full = full.toLowerCase()
     chunk = chunk.toLowerCase()
     return full.indexOf(chunk) >= 0
