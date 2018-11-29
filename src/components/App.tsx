@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { ICard } from '../types'
 import { getCardsByFetch } from '../AC'
 import { Spinner } from './Spinner/Spinner'
+import { isMatching } from '../utils/functions'
 
 interface IProps {
     cards: ICard[]
@@ -57,12 +58,6 @@ function filterByInput(cards: ICard[], filterOption: any) {
         .filter(card => isMatching(card.name, filterOption.name.nameLetter))
         .filter(card => isMatching(card.colorType, filterOption.color.colorType))
         .filter(card => isMatching(card.sugarContent, filterOption.taste.tasteType))
-}
-
-export function isMatching(full: string, chunk: string) {
-    full = full.toLowerCase()
-    chunk = chunk.toLowerCase()
-    return full.indexOf(chunk) >= 0
 }
 
 export default connect(
