@@ -3,6 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@types/enzyme": "^3.1.15",
+        "@types/enzyme-adapter-react-16": "^1.0.3",
         "@types/node": "10.0.4",
         "@types/react": "16.3.13",
         "@types/react-dom": "16.0.5",
@@ -25,6 +27,7 @@
         "eject": "react-scripts-ts eject"
     },
     "devDependencies": {
+        "@types/jest": "^23.3.10",
         "@types/node": "10.0.4",
         "@types/react": "16.3.13",
         "@types/react-dom": "16.0.5",
@@ -38,6 +41,7 @@
         "react-router-dom": "4.2.2",
         "react-test-renderer": "^16.6.3",
         "redux-devtools": "3.4.1",
+        "ts-jest": "^23.10.5",
         "typescript": "2.8.3"
     }
 }
