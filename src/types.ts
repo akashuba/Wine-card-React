@@ -13,3 +13,5 @@ export interface ICard {
     noteText: string
     contributor: string
 }
+
+export type OneOrMore<T> = T | T[]
