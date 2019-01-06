@@ -4,22 +4,22 @@ interface IProps {
   togglePopup: () => void
 }
 
-const WineAddPopup = ({togglePopup}: IProps): React.ReactElement<IProps> => {
+const WineAddPopup = ({ togglePopup }: IProps): React.ReactElement<IProps> => {
 
   return (
     <section className="add-wine-form-wrapper">
       <div className="add-wine-form">
         <h3 className="form-titile">Добавить карту</h3>
-        <form   onSubmit={(e) => sendFormData(e, togglePopup)}
-         method="post" encType="multipart/form-data" name="addcard">
+        <form onSubmit={(e) => sendFormData(e, togglePopup)}
+          method="post" encType="multipart/form-data" name="addcard">
           <ul>
             <li>
               <label htmlFor="contributor">Представьтесь</label>
-              <input type="text" name="contributor" id="contributor" required />
+              <input type="text" name="contributor" id="contributor" />
             </li>
             <li>
               <label htmlFor="formName">Марка</label>
-              <input type="text" name="formName" id="formName" placeholder="Cabernet" required />
+              <input type="text" name="formName" id="formName" placeholder="Cabernet" />
             </li>
             <li className="wineColor">
               <label htmlFor="wineColor">Цвет </label>
@@ -51,23 +51,23 @@ const WineAddPopup = ({togglePopup}: IProps): React.ReactElement<IProps> => {
             </li>
             <li>
               <label htmlFor="formColorText">Цвет</label>
-              <input type="text" name="colorText" id="formColorText" required />
+              <input type="text" name="colorText" id="formColorText" />
             </li>
             <li>
               <label htmlFor="aromeText">Аромат</label>
-              <input type="text" name="aromeText" id="aromeText" required />
+              <input type="text" name="aromeText" id="aromeText" />
             </li>
             <li>
               <label htmlFor="tasteText">Вкус</label>
-              <input type="text" name="tasteText" id="tasteText" required />
+              <input type="text" name="tasteText" id="tasteText" />
             </li>
             <li>
               <label htmlFor="originText">Происхождение</label>
-              <input type="text" name="originText" id="originText" placeholder="Италия" required />
+              <input type="text" name="originText" id="originText" placeholder="Италия" />
             </li>
             <li>
               <label htmlFor="priceText">Цена &#8381;</label>
-              <input type="number" name="priceText" id="priceText" required />
+              <input type="number" name="priceText" id="priceText" />
             </li>
             <li id="raiting-wrapper">
               <label htmlFor="formRaiting"> Рейтинг</label>
@@ -109,25 +109,25 @@ const WineAddPopup = ({togglePopup}: IProps): React.ReactElement<IProps> => {
     </section>
   )
 }
-
-const sendFormData =  (e: any, togglePopup: any): any => {
+// tslint:disable
+const sendFormData = (e: any, togglePopup: any): any => {
   {
     const oData = new FormData(e.target)
     const oReq = new XMLHttpRequest()
-    oReq.open('POST', 'functions.php', true)
-    oReq.onload = function(oEvent) {
+    oReq.open('POST', 'http://localhost:3004/api/wines/upload', true)
+    oReq.onload = function (oEvent) {
 
-        if (oReq.status === 200) {
-            console.log('Uploaded!')
-            window.location.reload()
-        } else {
-            console.warn('Error ' + oReq.status + ' occurred when trying to upload your file')
-        }
+      if (oReq.status === 200) {
+        console.log('Uploaded!')
+        // window.location.reload()
+      } else {
+        console.warn('Error ' + oReq.status + ' occurred when trying to upload your file')
+      }
     }
 
     oReq.send(oData)
     e.preventDefault()
-}
+  }
 }
 
 export { WineAddPopup }

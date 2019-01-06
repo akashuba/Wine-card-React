@@ -21,7 +21,7 @@ class WithCards extends React.Component<IProps, IState> {
     }
 
     public componentDidMount() {
-        fetch('/api/wines', {
+        fetch('http://localhost:3004/api/wines', {
             method: 'GET',
         })
             .then(response => {

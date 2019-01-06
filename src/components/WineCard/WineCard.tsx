@@ -29,9 +29,9 @@ const WineCard = ({
         <div className={currentLocation && currentLocation.length > 0 ? 'card-container' : 'empty'} >
             {currentLocation && currentLocation.length > 0 ?
                 <Link to="/" >
-                <div className="back-arrow-container" >
-                    <div className="back-to-main-arrow" ></div>
-                </div>
+                    <div className="back-arrow-container" >
+                        <div className="back-to-main-arrow" ></div>
+                    </div>
                 </Link>
                 : null
             }
@@ -39,7 +39,7 @@ const WineCard = ({
                 `card-item card-item-big` : `card-item `}>
                 <div className={currentLocation && currentLocation.length > 0 ?
                     `card-img card-img-big` : `card-img `}
-                      style={{ backgroundImage: `url(${imgUrl} )` }}>
+                    style={{ backgroundImage: `url(${imgUrl} )` }}>
                     <div className={`wine-color ${colorType}`} />
                     <div className="wine-raiting">&#9733;{rating}&#9733;</div>
                 </div>
