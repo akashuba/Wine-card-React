@@ -19,11 +19,11 @@ const WineAddPopup = ({ togglePopup }: IProps): React.ReactElement<IProps> => {
             </li>
             <li>
               <label htmlFor="formName">Марка</label>
-              <input type="text" name="formName" id="formName" placeholder="Cabernet" />
+              <input type="text" name="name" id="formName" placeholder="Cabernet" />
             </li>
             <li className="wineColor">
-              <label htmlFor="wineColor">Цвет </label>
-              <select name="wineColor" id="wineColor" className="selectors-arrow">
+              <label htmlFor="colorType">Цвет </label>
+              <select name="colorType" id="colorType" className="selectors-arrow">
                 <option value="red">красное</option>
                 <option value="white">белое</option>
                 <option value="rose">розовое</option>
@@ -118,7 +118,7 @@ const sendFormData = (e: any, togglePopup: any): any => {
     oReq.onload = function (oEvent) {
 
       if (oReq.status === 200) {
-        console.log('Uploaded!')
+        console.log(oReq.responseText)
         // window.location.reload()
       } else {
         console.warn('Error ' + oReq.status + ' occurred when trying to upload your file')
