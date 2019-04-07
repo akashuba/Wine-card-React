@@ -6,10 +6,12 @@ import { OneOrMore } from '../../types'
 
 interface IProps {
     children?: OneOrMore<React.ReactNode>
+    wineName?: string
 }
 
 interface IState {
     load: boolean
+    url: string
 }
 
 class WithCards extends React.Component<IProps, IState> {
@@ -17,13 +19,13 @@ class WithCards extends React.Component<IProps, IState> {
         super(props)
         this.state = {
             load: false,
+            url: !props.wineName ? 'http://localhost:3004/api/wines' :
+                `http://localhost:3004/api/wines/card-item/${this.props.wineName}`
         }
     }
 
     public componentDidMount() {
-        fetch('http://localhost:3004/api/wines', {
-            method: 'GET',
-        })
+        fetch(this.state.url, { method: 'GET', })
             .then(response => {
                 if (response.status !== 200 && response.status !== 304) {
                     return Promise.reject(new Error(response.statusText))

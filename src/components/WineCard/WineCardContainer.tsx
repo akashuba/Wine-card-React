@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { WineCard } from './WineCard'
+import { WithCards } from '../WithCards'
 import { ICard } from '../../types'
 import { connect } from 'react-redux'
 
@@ -35,11 +36,16 @@ class WineCardContainer extends Component<Props, State> {
         const getCard = cards ? cards.filter(card => card.name === getCardFromUrl()) : []
         return (
             <React.Fragment>
-                {getCard && getCard.length > 0 ? (
+                {cards.length > 0 && getCard && getCard.length > 0 ? (
                     <WineCard {...getCard[0]} currentLocation={window.location.pathname} />
                 ) : (
-                    <WineCard {...this.state} currentLocation={window.location.pathname} />
-                )}
+                        <WithCards wineName={getCardFromUrl()} >
+                            {getCard && getCard.length > 0 ?
+                                <WineCard {...getCard[0]} currentLocation={window.location.pathname} /> :
+                                <WineCard {...this.state} currentLocation={window.location.pathname} />
+                            }
+                        </WithCards>
+                    )}
             </React.Fragment>
         )
     }

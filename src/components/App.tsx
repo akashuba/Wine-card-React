@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { ICard } from '../types'
 import { getCardsByFetch } from '../AC'
 import { Spinner } from './Spinner/Spinner'
+import { WithCards } from './WithCards'
 
 interface IProps {
     cards: ICard[]
@@ -24,17 +25,19 @@ class App extends Component<IProps> {
         const cardResult = cards ? filterByInput(cards, allFilters) : []
         return (
             <React.Fragment>
-                <div className="wine-cards-title-container">
-                    <img src="./img/Wine_card.png" alt="" className="wine-cards-title" width="50%" height="50%" />
-                </div>
-                {cards && cards.length > 0 ? (
-                    <div>
-                        <Filter />
-                        <WineList wines={cardResult} />
+                <WithCards>
+                    <div className="wine-cards-title-container">
+                        <img src="./img/Wine_card.png" alt="" className="wine-cards-title" width="50%" height="50%" />
                     </div>
-                ) : (
-                        <Spinner />
-                    )}
+                    {cards && cards.length > 0 ? (
+                        <div>
+                            <Filter />
+                            <WineList wines={cardResult} />
+                        </div>
+                    ) : (
+                            <Spinner />
+                        )}
+                </WithCards>
             </React.Fragment>
         )
     }
