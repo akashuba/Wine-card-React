@@ -35,8 +35,8 @@ class App extends Component<IProps> {
                             <WineList wines={cardResult} />
                         </div>
                     ) : (
-                            <Spinner />
-                        )}
+                        <Spinner />
+                    )}
                 </WithCards>
             </React.Fragment>
         )

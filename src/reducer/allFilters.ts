@@ -1,23 +1,23 @@
 import { FILTER } from '../constants'
 
 interface IAction {
-    type: string,
+    type: string
     payload?: string
 }
 
 const filtersDefault = {
     sparkling: {
-        isSparkling: ''
+        isSparkling: '',
     },
     name: {
-        nameLetter: ''
+        nameLetter: '',
     },
     color: {
-        colorType: ''
+        colorType: '',
     },
     taste: {
-        tasteType: ''
-    }
+        tasteType: '',
+    },
 }
 
 export default (allFilters = filtersDefault, action: IAction) => {
@@ -26,32 +26,32 @@ export default (allFilters = filtersDefault, action: IAction) => {
         return {
             ...allFilters,
             sparkling: {
-                isSparkling: payload ? null : ''
-            }
+                isSparkling: payload ? false : '',
+            },
         }
     }
     if (type === FILTER.FILTER_BY_NAME) {
         return {
             ...allFilters,
             name: {
-                nameLetter: payload
-            }
+                nameLetter: payload,
+            },
         }
     }
     if (type === FILTER.FILTER_BY_COLOR) {
         return {
             ...allFilters,
             color: {
-                colorType: payload
-            }
+                colorType: payload,
+            },
         }
     }
     if (type === FILTER.FILTER_BY_TASTE) {
         return {
             ...allFilters,
             taste: {
-                tasteType: payload
-            }
+                tasteType: payload,
+            },
         }
     }
     return allFilters

@@ -34,12 +34,11 @@ a {
 }
 
 .wine-cards {
-    /* min-width: 385px; */
     margin: 0 auto;
     box-sizing: border-box;
     padding: 20px;
     display: flex;
-    justify-content: start;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -48,7 +47,9 @@ a {
     height: 525px;
     background-color: rgb(255, 245, 226);
     border-radius: 10px;
-    margin-right: 30px;
+    margin-top: 0;
+    margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 20px;
     overflow: hidden;
     box-sizing: border-box;
@@ -62,6 +63,7 @@ a {
     margin: 0 auto;
     position: relative;
     display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
     width: auto;
     height: auto;
@@ -194,6 +196,7 @@ a {
 
 .text-content {
     max-width: 400px;
+    flex-grow: 1;
 }
 
 .back-to-main-arrow {
@@ -620,6 +623,15 @@ a {
 }
 
 /* media queries */
+
+@media screen and (max-width: 880px) {
+    .card-item-big {
+        width: 400px;
+    }
+    .card-img-big {
+        margin-right: 0;
+    }
+}
 
 @media screen and (max-width: 700px) {
     .selectors {
