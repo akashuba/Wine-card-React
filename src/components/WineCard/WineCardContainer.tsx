@@ -39,13 +39,14 @@ class WineCardContainer extends Component<Props, State> {
                 {cards.length > 0 && getCard && getCard.length > 0 ? (
                     <WineCard {...getCard[0]} currentLocation={window.location.pathname} />
                 ) : (
-                        <WithCards wineName={getCardFromUrl()} >
-                            {getCard && getCard.length > 0 ?
-                                <WineCard {...getCard[0]} currentLocation={window.location.pathname} /> :
-                                <WineCard {...this.state} currentLocation={window.location.pathname} />
-                            }
-                        </WithCards>
-                    )}
+                    <WithCards wineName={getCardFromUrl()}>
+                        {getCard && getCard.length > 0 ? (
+                            <WineCard {...getCard[0]} currentLocation={window.location.pathname} />
+                        ) : (
+                            <WineCard {...this.state} currentLocation={window.location.pathname} />
+                        )}
+                    </WithCards>
+                )}
             </React.Fragment>
         )
     }
