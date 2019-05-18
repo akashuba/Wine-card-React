@@ -5,7 +5,7 @@ App for saving and rate your favorite wines, and also my laboratory of react, re
 
 https://github.com/akashuba/wineCard-backend - backend
 
-+ yarn install for make dependencies
++ npm install 
 + yarn start - to start dev server //localhost:3000/
 + yarn build - make bundle
 
