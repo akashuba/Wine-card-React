@@ -19,13 +19,16 @@ class WithCards extends React.Component<IProps, IState> {
         super(props)
         this.state = {
             load: false,
-            url: !props.wineName ? 'http://localhost:3004/api/wines' :
-                `http://localhost:3004/api/wines/card-item/${this.props.wineName}`
+            url: !props.wineName
+                ? 'http://192.168.29.42:3004/api/wines'
+                : `http://192.168.29.42:3004/api/wines/card-item/${props.wineName}`,
+            // url: !props.wineName ? 'http://localhost:3004/api/wines' :
+            //     `http://localhost:3004/api/wines/card-item/${this.props.wineName}`
         }
     }
 
     public componentDidMount() {
-        fetch(this.state.url, { method: 'GET', })
+        fetch(this.state.url, { method: 'GET' })
             .then(response => {
                 if (response.status !== 200 && response.status !== 304) {
                     return Promise.reject(new Error(response.statusText))

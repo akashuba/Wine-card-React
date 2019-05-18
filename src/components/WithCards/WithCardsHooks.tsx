@@ -14,6 +14,12 @@ export const WithCards = (props: IProps) => {
     const url: string = !props.wineName
         ? 'http://localhost:3004/api/wines'
         : `http://localhost:3004/api/wines/card-item/${props.wineName}`
+
+    // For Mobile
+    // const url: string = !props.wineName
+    //     ? 'http://192.168.29.42:3004/api/wines'
+    //     : `http://192.168.29.42:3004/api/wines/card-item/${props.wineName}`
+
     useEffect(() => {
         fetch(url, { method: 'GET' })
             .then(response => {
@@ -32,6 +38,6 @@ export const WithCards = (props: IProps) => {
             .catch(error => {
                 console.warn(error)
             })
-    })
+    }, [])
     return <div>{load ? props.children : <Spinner />}</div>
 }
