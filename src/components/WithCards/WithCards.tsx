@@ -20,10 +20,8 @@ class WithCards extends React.Component<IProps, IState> {
         this.state = {
             load: false,
             url: !props.wineName
-                ? 'http://192.168.29.42:3004/api/wines'
-                : `http://192.168.29.42:3004/api/wines/card-item/${props.wineName}`,
-            // url: !props.wineName ? 'http://localhost:3004/api/wines' :
-            //     `http://localhost:3004/api/wines/card-item/${this.props.wineName}`
+                ? `${process.env.REACT_APP_API}/api/wines`
+                : `${process.env.REACT_APP_API}/api/wines/card-item/${props.wineName}`,
         }
     }
 

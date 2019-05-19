@@ -11,14 +11,10 @@ interface IProps {
 
 export const WithCards = (props: IProps) => {
     const [load, setLoad] = useState(false)
-    const url: string = !props.wineName
-        ? 'http://localhost:3004/api/wines'
-        : `http://localhost:3004/api/wines/card-item/${props.wineName}`
 
-    // For Mobile
-    // const url: string = !props.wineName
-    //     ? 'http://192.168.29.42:3004/api/wines'
-    //     : `http://192.168.29.42:3004/api/wines/card-item/${props.wineName}`
+    const url: string = !props.wineName
+        ? `${process.env.REACT_APP_API}/api/wines`
+        : `${process.env.REACT_APP_API}/api/wines/card-item/${props.wineName}`
 
     useEffect(() => {
         fetch(url, { method: 'GET' })
