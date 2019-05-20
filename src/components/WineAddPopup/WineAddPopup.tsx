@@ -145,6 +145,7 @@ const sendFormData = (e: any, togglePopup: any): any => {
                         console.warn(error)
                     })
                 // window.location.reload()
+                togglePopup()
             } else {
                 console.warn('Error ' + oReq.status + ' occurred when trying to upload your file')
             }
