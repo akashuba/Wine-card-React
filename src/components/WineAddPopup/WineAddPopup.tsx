@@ -120,9 +120,9 @@ const WineAddPopup = ({ togglePopup }: IProps): React.ReactElement<IProps> => {
     )
 }
 // tslint:disable
-const sendFormData = (e: any, togglePopup: any): any => {
+const sendFormData = (event: any, togglePopup: () => void): void => {
     {
-        const oData = new FormData(e.target)
+        const oData = new FormData(event.target)
         const oReq = new XMLHttpRequest()
         oReq.open('POST', `${process.env.REACT_APP_API}/api/wines/upload`, true)
         oReq.onload = function(oEvent) {
@@ -145,13 +145,13 @@ const sendFormData = (e: any, togglePopup: any): any => {
                         console.warn(error)
                     })
                 // window.location.reload()
-                togglePopup()
             } else {
                 console.warn('Error ' + oReq.status + ' occurred when trying to upload your file')
             }
         }
         oReq.send(oData)
-        e.preventDefault()
+        event.preventDefault()
+        togglePopup()
     }
 }
 

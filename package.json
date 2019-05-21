@@ -12,6 +12,7 @@
         "@types/node": "10.0.4",
         "@types/react-router-dom": "4.2.6",
         "@types/redux": "3.6.0",
+        "formik": "^1.5.7",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-redux": "5.0.7",
