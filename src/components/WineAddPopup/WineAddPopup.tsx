@@ -1,6 +1,5 @@
 import React from 'react'
-import store from '../../store'
-import { getCardsByFetch } from '../../AC'
+import { getWines } from '../../lib/getWines'
 
 interface IProps {
     togglePopup: () => void
@@ -128,22 +127,7 @@ const sendFormData = (event: any, togglePopup: () => void): void => {
         oReq.onload = function(oEvent) {
             if (oReq.status === 200) {
                 console.log(oReq.responseText)
-                fetch(`${process.env.REACT_APP_API}/api/wines`, { method: 'GET' })
-                    .then(response => {
-                        if (response.status !== 200 && response.status !== 304) {
-                            return Promise.reject(new Error(response.statusText))
-                        }
-                        return Promise.resolve(response)
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data) {
-                            store.dispatch(getCardsByFetch(data))
-                        }
-                    })
-                    .catch(error => {
-                        console.warn(error)
-                    })
+                getWines().then(() => togglePopup())
                 // window.location.reload()
             } else {
                 console.warn('Error ' + oReq.status + ' occurred when trying to upload your file')
@@ -151,7 +135,6 @@ const sendFormData = (event: any, togglePopup: () => void): void => {
         }
         oReq.send(oData)
         event.preventDefault()
-        togglePopup()
     }
 }
 
