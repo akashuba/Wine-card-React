@@ -1,5 +1,5 @@
 ## React Wines Card App
-#### Stack create-react-app, redux, typescript, react router.
+#### Stack: create-react-app, redux, typescript, react router.
 
 App for saving and rate your favorite wines, and also my laboratory of react, redux, etc.
 
